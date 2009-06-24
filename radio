@@ -20,10 +20,12 @@ exit (@_ ? 1 : 0);
 
 use Getopt::Long;
 our $verbose=0;
+our $opt_l,
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
+	   "list"=>\$opt_l,
 	   ) or exit 1;
-usage unless @ARGV==1;
+usage unless @ARGV==1 or $opt_l;
 our ($rawkey)=@ARGV;
 
 use Chj::xperlfunc ':all';
@@ -59,12 +61,28 @@ our $mapping=
 
    };
 
-my $key= lc $rawkey;
-if (my $do=$$mapping{$key}) {
-    &$do
+if ($opt_l) {
+    print map { "$_\n" } sort keys %$mapping
 } else {
-    if ($key eq '-l' or $key eq '--list') {
-	print map { "$_\n" } sort keys &$mapping
+    my $key= lc $rawkey;
+    if (my $do= do {
+	if (my $do=$$mapping{$key}) {
+	    $do;
+	    #} elsif ($key=~ /.*_(.*)/) {
+	} elsif (my @parts= split /_/,$key) {
+	    my $res;
+	  TRY: {
+		for (@parts) {
+		    if (my $do= $$mapping{$_}) {
+			$res=$do;
+			last TRY;
+		    }
+		}
+	    };
+	    $res
+	}
+    }) {
+	&$do
     } else {
 	die "unknown radio station '$key'";
     }
