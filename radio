@@ -65,23 +65,7 @@ if ($opt_l) {
     print map { "$_\n" } sort keys %$mapping
 } else {
     my $key= lc $rawkey;
-    if (my $do= do {
-	if (my $do=$$mapping{$key}) {
-	    $do;
-	    #} elsif ($key=~ /.*_(.*)/) {
-	} elsif (my @parts= split /_/,$key) {
-	    my $res;
-	  TRY: {
-		for (@parts) {
-		    if (my $do= $$mapping{$_}) {
-			$res=$do;
-			last TRY;
-		    }
-		}
-	    };
-	    $res
-	}
-    }) {
+    if (my $do= $$mapping{$key}) {
 	&$do
     } else {
 	die "unknown radio station '$key'";
