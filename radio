@@ -11,7 +11,10 @@ sub usage {
     print STDERR map{"$_\n"} @_ if @_;
     print "$myname radioname
 
-  instead of radionname, give -l to get listing of all known radionames
+  Instead of radionname, give -l to get listing of all known radionames.
+
+  Radioname can be part of the key given in -l, split on the
+  underscore, as long as there's no conflict.
 
   (Christian Jaeger <$email>)
 ";
