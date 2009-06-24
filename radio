@@ -64,6 +64,15 @@ our $mapping=
 if ($opt_l) {
     print map { "$_\n" } sort keys %$mapping
 } else {
+    {
+	for my $key (keys %$mapping) {
+	    if (my @parts= split /_/, $key) {
+		for my $part (@parts) {
+		    $$mapping{$part}=$$mapping{$key}
+		}
+	    }
+	}
+    }
     my $key= lc $rawkey;
     if (my $do= $$mapping{$key}) {
 	&$do
