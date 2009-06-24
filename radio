@@ -1,0 +1,74 @@
+#!/usr/bin/perl -w
+
+# Wed Jun 24 16:42:42 EDT 2009
+(my $email='christian-novo%jaeger,mine,nu')=~ tr/%,/@./;
+
+use strict;
+
+$0=~ /(.*?)([^\/]+)\z/s or die "?";
+my ($mydir, $myname)=($1,$2);
+sub usage {
+    print STDERR map{"$_\n"} @_ if @_;
+    print "$myname radioname
+
+  instead of radionname, give -l to get listing of all known radionames
+
+  (Christian Jaeger <$email>)
+";
+exit (@_ ? 1 : 0);
+}
+
+use Getopt::Long;
+our $verbose=0;
+GetOptions("verbose"=> \$verbose,
+	   "help"=> sub{usage},
+	   ) or exit 1;
+usage unless @ARGV==1;
+our ($rawkey)=@ARGV;
+
+use Chj::xperlfunc ':all';
+
+our $run=sub {
+    our ($cmd,@args)=@_;
+    xexec (@$cmd,@args)
+};
+
+our $mplayer= sub ( $ ) {
+    my ($url)=@_;
+    sub {
+	&$run (["mplayer"],$url)
+    }
+};
+#
+#und lazy wär es klr gl."?"...schongeldoch .
+
+our $mapping=
+  +{
+    #drs1=> [$mplayer, "mms://dms-cl-021.skypro-media.net/drs1"],
+    #h und eben equivalenzhiernidgegebenhhhhhh,   so:
+    drs1=> &$mplayer("mms://dms-cl-021.skypro-media.net/drs1"),
+    #krck.
+    drs2=> &$mplayer("mms://dms-cl-021.skypro-media.net/drs2"),
+    drs3=> &$mplayer("mms://dms-cl-021.skypro-media.net/drs3"),
+    drs_virus=> &$mplayer("mms://dms-cl-021.skypro-media.net/virus"),
+    drs4=> &$mplayer ("mms://dms-cl-021.skypro-media.net/drs4"), # "drs4 News"
+    drs_musikwelle=> &$mplayer("mms://dms-cl-021.skypro-media.net/mw531"),
+
+    couleur3=> &$mplayer("http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
+    #hm h wer wohl da mp3 drusmacht"??"
+
+   };
+
+my $key= lc $rawkey;
+if (my $do=$$mapping{$key}) {
+    &$do
+} else {
+    if ($key eq '-l' or $key eq '--list') {
+	print map { "$_\n" } sort keys &$mapping
+    } else {
+	die "unknown radio station '$key'";
+    }
+}
+
+#use Chj::ruse;
+#use Chj::Backtrace; use Chj::repl; repl;
