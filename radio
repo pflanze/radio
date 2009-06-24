@@ -71,6 +71,7 @@ if ($opt_l) {
 	for my $key (keys %$mapping) {
 	    if (my @parts= split /_/, $key) {
 		for my $part (@parts) {
+		    next if $$mapping{$part};
 		    $$mapping{$part}=$$mapping{$key}
 		}
 	    }
