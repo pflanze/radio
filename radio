@@ -74,17 +74,52 @@ sub Die {
     die join("", "$myname: ",@_, "\n")
 }
 
+# sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs which appear once
+#     my ($lis)=@_;
+#     my $seen= {};
+#     my $out;
+#     for (@$lis) {
+# 	my ($key,$val)=@$_;
+# 	if ($$seen{$key}) {
+# 	    delete $$out{$key}; # in case we had something
+# 	} else {
+# 	    $$seen{$key}=1;
+# 	    $$out{$key}=$val;
+# 	}
+#     }
+#     $out
+# }
+sub filter_singles { # values -> values which appear only once  (ordering of values not maintained!)
+    my $seen= {};
+    my $out;
+    for my $key (@_) {
+	if ($$seen{$key}) {
+	    delete $$out{$key}; # in case we had something
+	} else {
+	    $$seen{$key}=1;
+	    $$out{$key}=undef;
+	}
+    }
+    keys %$out
+}
+#use Chj::Backtrace; use Chj::repl; repl;
+#__END__
 if ($opt_l) {
     print map { "$_\n" } sort keys %$mapping
 } else {
     {
 	for my $key (keys %$mapping) {
-	    if (my @parts= split /_/, $key) {
-		for my $part (@parts) {
+	    # first try to add the parts split on _, then split on number boundaries;
+	    # while never 'risking' random ordering. we order by running code so. order. and then filter so that no random overlay endings happen  jou understand?.
+	    our $add_keys_singles= sub {
+		for my $part (filter_singles @_) {
 		    next if $$mapping{$part};
 		    $$mapping{$part}=$$mapping{$key}
 		}
-	    }
+	    };
+	    &$add_keys_singles(split /_/, $key);
+	    &$add_keys_singles($key=~ /([a-z]+)/g);
+	    &$add_keys_singles($key=~ /(\d+)/g);
 	}
     }
     my $key= lc $rawkey;
@@ -101,7 +136,6 @@ if ($opt_l) {
 	local our $trie= new Tree::Trie;
 	$trie->add_data ($_, $$mapping{$_}) for (keys %$mapping);
 
-	#use Chj::Backtrace; use Chj::repl; repl;
 	my @res= $trie->lookup_data ($key);
 	if (@res==2) {
 	    &{$res[1]}
