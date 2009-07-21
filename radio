@@ -38,12 +38,18 @@ our $run=sub {
     xexec (@$cmd,@args)
 };
 
-our $mplayer= sub ( $ ) {
-    my ($url)=@_;
-    sub {
-	&$run (["mplayer"],$url)
+our $mkplayer= sub {
+    my ($player)=@_;
+    sub ( $ ) {
+	my ($url)=@_;
+	sub {
+	    &$run ([$player],$url)
+	}
     }
 };
+our $mplayer= &$mkplayer ("mplayer");
+our $mp3= &$mkplayer ("mpg123");
+
 #
 #und lazy wär es klr gl."?"...schongeldoch .
 
@@ -59,7 +65,7 @@ our $mapping=
     drs4=> &$mplayer ("mms://dms-cl-021.skypro-media.net/drs4"), # "drs4 News"
     drs_musikwelle=> &$mplayer("mms://dms-cl-021.skypro-media.net/mw531"),
 
-    couleur3=> &$mplayer("http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
+    couleur3=> &$mp3("http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
     #hm h wer wohl da mp3 drusmacht"??"
 
    };
