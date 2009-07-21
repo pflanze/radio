@@ -14,7 +14,8 @@ sub usage {
   Instead of radionname, give -l to get listing of all known radionames.
 
   Radioname can be part of the key given in -l, split on the
-  underscore, as long as there's no conflict.
+  underscore or digit and alphabetic character parts, or prefixes
+  thereof, as long as there's no conflict.
 
   (Christian Jaeger <$email>)
 ";
