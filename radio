@@ -17,6 +17,10 @@ sub usage {
   underscore or digit and alphabetic character parts, or prefixes
   thereof, as long as there's no conflict.
 
+  Options:
+  -l|--list  list known station keys
+  --dry-run  only select station, don't open it
+
   (Christian Jaeger <$email>)
 ";
 exit (@_ ? 1 : 0);
@@ -45,7 +49,9 @@ our $mkplayer= sub {
     sub ( $ ) {
 	my ($url)=@_;
 	sub {
-	    &$run ([$player],$url)
+	    unless ($opt_dry) {
+		&$run ([$player],$url)
+	    }
 	}
     }
 };
