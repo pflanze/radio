@@ -24,10 +24,11 @@ exit (@_ ? 1 : 0);
 
 use Getopt::Long;
 our $verbose=0;
-our $opt_l,
+our ($opt_l,$opt_dry);
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
 	   "list"=>\$opt_l,
+	   "dry-run"=> \$opt_dry,
 	   ) or exit 1;
 usage unless @ARGV==1 or $opt_l;
 our ($rawkey)=@ARGV;
@@ -75,54 +76,81 @@ sub Die {
     die join("", "$myname: ",@_, "\n")
 }
 
-# sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs which appear once
-#     my ($lis)=@_;
-#     my $seen= {};
-#     my $out;
-#     for (@$lis) {
-# 	my ($key,$val)=@$_;
-# 	if ($$seen{$key}) {
-# 	    delete $$out{$key}; # in case we had something
-# 	} else {
-# 	    $$seen{$key}=1;
-# 	    $$out{$key}=$val;
-# 	}
-#     }
-#     $out
-# }
-sub filter_singles { # values -> values which appear only once  (ordering of values not maintained!)
+sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs which appear once
+    # [ [ "a", 1 ], [ "a", 2 ], [ "b", 3 ] ] -> { "b" => 3 }
+    my ($lis)=@_;
     my $seen= {};
     my $out;
-    for my $key (@_) {
+    for (@$lis) {
+	my ($key,$val)=@$_;
 	if ($$seen{$key}) {
 	    delete $$out{$key}; # in case we had something
 	} else {
 	    $$seen{$key}=1;
-	    $$out{$key}=undef;
+	    $$out{$key}=$val;
 	}
     }
-    keys %$out
+    $out
 }
+# sub filter_singles { # values -> values which appear only once  (ordering of values not maintained!)
+#     my $seen= {};
+#     my $out;
+#     for my $key (@_) {
+# 	if ($$seen{$key}) {
+# 	    delete $$out{$key}; # in case we had something
+# 	} else {
+# 	    $$seen{$key}=1;
+# 	    $$out{$key}=undef;
+# 	}
+#     }
+#     keys %$out
+# }
 #use Chj::Backtrace; use Chj::repl; repl;
 #__END__
 if ($opt_l) {
     print map { "$_\n" } sort keys %$mapping
 } else {
+    use Data::Dumper;
+    print Data::Dumper->Dump([$mapping],["mapping"]);
     {
-	for my $key (keys %$mapping) {
-	    # first try to add the parts split on _, then split on number boundaries;
-	    # while never 'risking' random ordering. we order by running code so. order. and then filter so that no random overlay endings happen  jou understand?.
-	    our $add_keys_singles= sub {
-		for my $part (filter_singles @_) {
-		    next if $$mapping{$part};
-		    $$mapping{$part}=$$mapping{$key}
-		}
-	    };
-	    &$add_keys_singles(split /_/, $key);
-	    &$add_keys_singles($key=~ /([a-z]+)/g);
-	    &$add_keys_singles($key=~ /(\d+)/g);
-	}
+	# first try to add the parts split on _, then split on number boundaries;
+	# while never 'risking' random ordering. we order by running code so. order. and then filter so that no random overlay endings happen  jou understand?.
+	local our $add_keys_singles= sub {
+	    local our $filtered= filter_singles \@_;
+	    #use Chj::Backtrace; use Chj::repl; repl;
+	    print Data::Dumper->Dump([$filtered],["filtered"]);
+	    for my $part (keys %$filtered) {
+		next if $$mapping{$part};
+		#my ($_partagain, $origkey)= @{ $$filtered{$part} };
+		#nope how kam ich druf.  wurden nur einfach mehrfach reingegebn. origkey for every part. aber just origkey. list of lists is nur toplevel ding. das \@_.  heh.
+		my $origkey= $$filtered{$part};
+		$$mapping{$part}=$$mapping{$origkey}
+	    }
+	};
+	#use Chj::Backtrace; use Chj::repl; repl;
+	print "Adding split _..\n";
+	&$add_keys_singles(map { my $key= $_;
+				 map { [$_, $key] }
+				   split /_/ }
+			   keys %$mapping);
+#use Chj::Backtrace; use Chj::repl; repl;
+	print "Adding split [a-z]+..\n";
+
+	&$add_keys_singles(map { my $key= $_;
+				 map { [$_, $key] }
+				   /([a-z]+)/g }
+			   keys %$mapping);
+#use Chj::Backtrace; use Chj::repl; repl;
+	print "Adding split \\d+..\n";
+
+	&$add_keys_singles(map { my $key= $_;
+				 map { [$_, $key] }
+				   /(\d+)/g }
+			   keys %$mapping);
+#use Chj::Backtrace; use Chj::repl; repl;
+
     }
+    print Data::Dumper->Dump([$mapping],["mapping"]);
     my $key= lc $rawkey;
     if (my $do= $$mapping{$key}) {
 	&$do
