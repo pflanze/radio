@@ -121,15 +121,11 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
 if ($opt_l) {
     print map { "$_\n" } sort keys %$mapping
 } else {
-    use Data::Dumper;
-    print Data::Dumper->Dump([$mapping],["mapping"]);
     {
 	# first try to add the parts split on _, then split on number boundaries;
 	# while never 'risking' random ordering. we order by running code so. order. and then filter so that no random overlay endings happen  jou understand?.
 	local our $add_keys_singles= sub {
 	    local our $filtered= filter_singles \@_;
-	    #use Chj::Backtrace; use Chj::repl; repl;
-	    print Data::Dumper->Dump([$filtered],["filtered"]);
 	    for my $part (keys %$filtered) {
 		next if $$mapping{$part};
 		#my ($_partagain, $origkey)= @{ $$filtered{$part} };
@@ -138,30 +134,19 @@ if ($opt_l) {
 		$$mapping{$part}=$$mapping{$origkey}
 	    }
 	};
-	#use Chj::Backtrace; use Chj::repl; repl;
-	print "Adding split _..\n";
 	&$add_keys_singles(map { my $key= $_;
 				 map { [$_, $key] }
 				   split /_/ }
 			   keys %$mapping);
-#use Chj::Backtrace; use Chj::repl; repl;
-	print "Adding split [a-z]+..\n";
-
 	&$add_keys_singles(map { my $key= $_;
 				 map { [$_, $key] }
 				   /([a-z]+)/g }
 			   keys %$mapping);
-#use Chj::Backtrace; use Chj::repl; repl;
-	print "Adding split \\d+..\n";
-
 	&$add_keys_singles(map { my $key= $_;
 				 map { [$_, $key] }
 				   /(\d+)/g }
 			   keys %$mapping);
-#use Chj::Backtrace; use Chj::repl; repl;
-
     }
-    print Data::Dumper->Dump([$mapping],["mapping"]);
     my $key= lc $rawkey;
     if (my $do= $$mapping{$key}) {
 	&$do
