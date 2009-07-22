@@ -51,9 +51,9 @@ our $mkplayer= sub {
 	($key,
 	 sub {
 	     if ($opt_dry) {
-		 print "Would play $key.\n";
+		 print "Would play $key ($url).\n";
 	     } else {
-		 print "Playing $key..\n\n";
+		 print "Playing $key ($url)..\n\n";
 		 &$run ($player,$url)
 	     }
 	 }
