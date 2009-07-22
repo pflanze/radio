@@ -91,7 +91,7 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
     # [ [ "a", 1 ], [ "a", 2 ], [ "b", 3 ] ] -> { "b" => 3 }
     my ($lis)=@_;
     my $seen= {};
-    my $out;
+    my $out= {};
     for (@$lis) {
 	my ($key,$val)=@$_;
 	if ($$seen{$key}) {
@@ -103,6 +103,26 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
     }
     $out
 }
+
+sub uniq ( $ ) { # array of pairs -> hash containing only those pairs which appear once, *except* if the values are the same, then include one copy. WEll, if it's not the same, just die, rather.
+    # [ [ "a", 1 ], [ "a", 1 ], [ "b", 3 ] ] -> { "a"=> 1, "b" => 3 }
+    my ($lis)=@_;
+    my $out={};
+    for (@$lis) {
+	my ($key,$val)=@$_;
+	if (exists $$out{$key}) {
+	    if ($$out{$key} eq $val) {
+		# ok
+	    } else {
+		die "multiple different values for key '$key'";
+	    }
+	} else {
+	    $$out{$key}=$val;
+	}
+    }
+    $out
+}
+
 # sub filter_singles { # values -> values which appear only once  (ordering of values not maintained!)
 #     my $seen= {};
 #     my $out;
@@ -165,7 +185,7 @@ if ($opt_l) {
 	# take in hash to create pairs at all.(sgh) (can't reverse here, since we would loose the complex values)
 	my $res= { $trie->lookup_data ($key) };
 	my $resarray= [ map { my $key=$_; my $val= $$res{$key}; [ $val, $key ]} keys %$res ];
-	my $filtered= filter_singles $resarray;
+	my $filtered= uniq $resarray;
 	my @values= values %$filtered;
 	if (@values==1) {
 	    &{$values[1]}
