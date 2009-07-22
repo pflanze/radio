@@ -191,15 +191,15 @@ if ($opt_l) {
 	# all the values have to be the same
 	if (keys %$res) {
 	    my $val;
-	    for my $key (keys %$res) {
+	    for my $k (keys %$res) {
 		if ($val) {
-		    if ($$res{$key} eq $val) {
+		    if ($$res{$k} eq $val) {
 			# ok
 		    } else {
 			Die "station key '$key' ambiguous";
 		    }
 		} else {
-		    $val= $$res{$key}
+		    $val= $$res{$k}
 		}
 	    }
 	    &$val
