@@ -161,10 +161,15 @@ if ($opt_l) {
 	local our $trie= new Tree::Trie;
 	$trie->add_data ($_, $$mapping{$_}) for (keys %$mapping);
 
-	my @res= $trie->lookup_data ($key);
-	if (@res==2) {
-	    &{$res[1]}
-	} elsif (@res) {
+	# filter on values, thus reverse key/value pairs
+	# take in hash to create pairs at all.(sgh) (can't reverse here, since we would loose the complex values)
+	my $res= { $trie->lookup_data ($key) };
+	my $resarray= [ map { my $key=$_; my $val= $$res{$key}; [ $val, $key ]} keys %$res ];
+	my $filtered= filter_singles $resarray;
+	my @values= values %$filtered;
+	if (@values==1) {
+	    &{$values[1]}
+	} elsif (@values) {
 	    Die "station key '$key' ambiguous";
 	} else {
 	    Die "station key '$key' not found";
