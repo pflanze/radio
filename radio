@@ -54,14 +54,17 @@ our $mkplayer= sub {
 		 print "Would play $key.\n";
 	     } else {
 		 print "Playing $key..\n\n";
-		 &$run ([$player],$url)
+		 &$run ($player,$url)
 	     }
 	 }
 	)
     }
 };
-our $mplayer= &$mkplayer ("mplayer");
-our $mp3= &$mkplayer ("mpg123");
+our $mplayer= &$mkplayer (["mplayer",
+			   #"-audio-preload","2"  is in mplayer manpage, but is for mencoder only.
+			   #hm finde nix
+			  ]);
+our $mp3= &$mkplayer (["mpg123"]);
 
 #
 #und lazy wär es klr gl."?"...schongeldoch .
