@@ -47,12 +47,17 @@ our $run=sub {
 our $mkplayer= sub {
     my ($player)=@_;
     sub ( $ ) {
-	my ($url)=@_;
-	sub {
-	    unless ($opt_dry) {
-		&$run ([$player],$url)
-	    }
-	}
+	my ($key,$url)=@_;
+	($key,
+	 sub {
+	     if ($opt_dry) {
+		 print "Would play $key.\n";
+	     } else {
+		 print "Playing $key..\n\n";
+		 &$run ([$player],$url)
+	     }
+	 }
+	)
     }
 };
 our $mplayer= &$mkplayer ("mplayer");
@@ -65,15 +70,15 @@ our $mapping=
   +{
     #drs1=> [$mplayer, "mms://dms-cl-021.skypro-media.net/drs1"],
     #h und eben equivalenzhiernidgegebenhhhhhh,   so:
-    drs1=> &$mplayer("mms://dms-cl-021.skypro-media.net/drs1"),
+    &$mplayer(drs1=> "mms://dms-cl-021.skypro-media.net/drs1"),
     #krck.
-    drs2=> &$mplayer("mms://dms-cl-021.skypro-media.net/drs2"),
-    drs3=> &$mplayer("mms://dms-cl-021.skypro-media.net/drs3"),
-    drs_virus=> &$mplayer("mms://dms-cl-021.skypro-media.net/virus"),
-    drs4=> &$mplayer ("mms://dms-cl-021.skypro-media.net/drs4"), # "drs4 News"
-    drs_musikwelle=> &$mplayer("mms://dms-cl-021.skypro-media.net/mw531"),
+    &$mplayer(drs2=> "mms://dms-cl-021.skypro-media.net/drs2"),
+    &$mplayer(drs3=> "mms://dms-cl-021.skypro-media.net/drs3"),
+    &$mplayer(drs_virus=> "mms://dms-cl-021.skypro-media.net/virus"),
+    &$mplayer (drs4=> "mms://dms-cl-021.skypro-media.net/drs4"), # "drs4 News"
+    &$mplayer(drs_musikwelle=> "mms://dms-cl-021.skypro-media.net/mw531"),
 
-    couleur3=> &$mp3("http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
+    &$mp3(couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
     #hm h wer wohl da mp3 drusmacht"??"
 
    };
