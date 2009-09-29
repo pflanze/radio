@@ -90,6 +90,7 @@ our $mapping=
     &$ogg (montreal_ckut=> "http://www.ckut.ca:8000/ckut-live.ogg"),
 
     &$mp3 (dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
+    &$mp3 (radio_zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
    };
 
 sub Die {
