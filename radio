@@ -45,15 +45,16 @@ our $run=sub {
 };
 
 our $mkplayer= sub {
-    my ($player)=@_;
+    my ($player,$maybe_playername)=@_;
+    my $playername= $maybe_playername || $$player[0];
     sub ( $ ) {
 	my ($key,$url)=@_;
 	(lc($key),
 	 sub {
 	     if ($opt_dry) {
-		 print "Would play $key ($url).\n";
+		 print "Would play $key ($url) with $playername.\n";
 	     } else {
-		 print "*** Playing $key ($url).. ***\n\n";
+		 print "*** Playing $key ($url) with $playername.. ***\n\n";
 		 &$run ($player,$url)
 	     }
 	 }
