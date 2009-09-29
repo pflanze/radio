@@ -65,6 +65,7 @@ our $mplayer= &$mkplayer (["mplayer",
 			   #hm finde nix
 			  ]);
 our $mp3= &$mkplayer (["mpg123"]);
+our $ogg= &$mkplayer (["ogg123", "-b","100","-p","90"]);
 
 #
 #und lazy wär es klr gl."?"...schongeldoch .
@@ -84,6 +85,9 @@ our $mapping=
     &$mp3(couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
     #hm h wer wohl da mp3 drusmacht"??"
 
+    &$mp3 (montreal_k103=> "http://knw-stream.mohawk.ca:8000/k103"),
+    &$mp3 (montreal_CIBL=> "http://stream02.ustream.ca:8000/cibl128.mp3"),
+    &$ogg (montreal_ckut=> "http://www.ckut.ca:8000/ckut-live.ogg"),
    };
 
 sub Die {
