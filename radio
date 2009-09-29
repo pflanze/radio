@@ -48,7 +48,7 @@ our $mkplayer= sub {
     my ($player)=@_;
     sub ( $ ) {
 	my ($key,$url)=@_;
-	($key,
+	(lc($key),
 	 sub {
 	     if ($opt_dry) {
 		 print "Would play $key ($url).\n";
