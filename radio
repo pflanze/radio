@@ -54,7 +54,9 @@ our $mkplayer= sub {
 	     if ($opt_dry) {
 		 print "Would play $key ($url) with $playername.\n";
 	     } else {
-		 print "*** Playing $key ($url) with $playername.. ***\n\n";
+		 my $msg= "*** Playing $key ($url) with $playername ***";
+		 my $line= "*"x(length($msg));
+		 print "$line\n$msg\n$line\n";
 		 &$run ($player,$url)
 	     }
 	 }
