@@ -94,6 +94,8 @@ our $mapping=
 
     &$mp3 (dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
     &$mp3 (radio_zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
+
+    &$mp3 (localhost=> "http://localhost:1234/"),
    };
 
 sub Die {
