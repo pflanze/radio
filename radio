@@ -136,6 +136,21 @@ our $mapping=
     #&$mplayer (CBME_oderso=> "http://www.cbc.ca/livemedia/cbcr1-montreal.asx"),
     # geht nid "Error while parsing chunk header"
 
+    # http://en.wikipedia.org/wiki/CISM-FM
+    # CISM-FM (Communication Information Sur la Montagne) is the official radio station of Université de Montréal. It is student-run on a volunteer basis and can be heard in Montreal, Canada, and its outlying regions,
+    # 89.3 MHz
+    # 10 kW
+    #ww
+    # [As early as 1970, Université de Montréal students developed the idea of a French college radio station]
+    # With a broadcasting radius of 70 km, CISM is now the world's largest French-language college radio station.
+    #gsh h
+    # http://www.cism.umontreal.ca/
+    #hm schonmalgesehen. flash furchtbar irgendales.
+    #und ja seufz nid working.
+    #krack download air irgend macromedia krack is n zip file.
+    #&$mplayer(umontreal=> "http://www.cism.umontreal.ca/webmotion/flashservices/gateway.php"),
+    #gehtnid.fk
+
     
    };
 
