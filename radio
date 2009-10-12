@@ -166,7 +166,7 @@ our $mapping=
     # The station has a smooth jazz format since its inception in December 2004 and identifies itself as Planète 91,9. It was previously known as Couleur Jazz before being re-branded in the summer of 2008.
     # http://planetejazz.ca/
     # http://rms.radiox.com/player/planet/?spc=CKLX
-    &$mplayer (montreal_CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
+    #&$mplayer (montreal_CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
     # http://rms.radiox.com/player/planet/?spc=CKLX  geht nicht.
     # http://rms.planeteradio.ca/player/planet?spc=CKLX neither.
     # http://rms.planeteradio.ca/player/planet?spc=CKXO neither.
