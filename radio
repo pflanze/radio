@@ -103,7 +103,7 @@ our $mapping=
     # broadcast from a tower on the top of Mount Royal, reaches as far as the Eastern Townships and upstate New York
     # 5.6 kW
     # more than 300 volunteers
-    &$ogg (montreal_ckut=> "http://www.ckut.ca:8000/ckut-live.ogg"),
+    &$ogg (montreal_CKUT=> "http://www.ckut.ca:8000/ckut-live.ogg"),
 
     &$mp3 (dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
     &$mp3 (zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
