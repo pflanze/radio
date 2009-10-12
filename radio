@@ -221,6 +221,20 @@ our $mapping=
     # http://www.radio-canada.ca/radio/
     #wl finde eh nid wo klickenmuss aber geht ja nid wei s i ja schon.
 
+    # http://en.wikipedia.org/wiki/CJFM-FM
+    # English language Canadian radio station located in Montreal
+    # Owned and operated by Astral Media, it broadcasts on 95.9 MHz with an effective radiated power of 41,200 watts (class C1) using an omnidirectional antenna.
+    # hot adult contemporary format, and is the only hot AC station licensed in Montreal
+    #u?
+    # Branding 	Virgin Radio 96
+    # Slogan 	Today's Best Music
+    # Shave To Save was a fundraiser conceived in 2001 by the station. Every October, Virgin Radio jocks visit offices and schools, where they shave heads for a minimum $2000 donation. The proceeds go to the Quebec Breast Cancer Foundation.
+    #u
+    # http://montreal.virginradio.ca/
+    # flashplayer geht nid, aber config.json speichern gibt u.a.:
+    # "traditionalMP3_streamMount":[ "http://64.34.159.35/cjfm-mp3", "http://64.34.159.52/cjfm-mp3", "http://64.34.159.53/cjfm-mp3", "http://66.244.221.250/cjfm-mp3" ],
+    #&$mp3 (montreal_virgin=> "http://64.34.159.35/cjfm-mp3"),
+    # 404 File Not Found u  und die andern ebenfalls.
     
    };
 
