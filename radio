@@ -93,7 +93,7 @@ our $mapping=
     &$ogg (montreal_ckut=> "http://www.ckut.ca:8000/ckut-live.ogg"),
 
     &$mp3 (dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
-    &$mp3 (radio_zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
+    &$mp3 (zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
     &$ogg (radius=> "http://relay.radio.ethz.ch/sender.ogg"),
     &$mp3 (radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
     &$mp3 (localhost=> "http://localhost:1234/"),
