@@ -125,7 +125,7 @@ our $mapping=
     # located in Joliette
     # www.m1035fm.com   M 103,5 FM - La radio du Grand Lanaudière
     # "http://205.151.16.92:8000/xstream.m3u"
-    &$mp3 ("CJLM-FM_joliette"=> "http://205.151.16.92:8000/xstream"),
+    &$mp3 ("joliette_CJLM-FM"=> "http://205.151.16.92:8000/xstream"),
 
     # http://en.wikipedia.org/wiki/CBME-FM
     # Owned and operated by the (government-owned) Canadian Broadcasting Corporation, it broadcasts on 88.5 MHz using a directional antenna with an average effective radiated power of 11,510 watts and a peak effective radiated power of 25,000 watts (class B).
@@ -135,7 +135,7 @@ our $mapping=
     # 11,510 watts
     # http://www.cbc.ca/montreal/
     #hm krieg aber nix rein. und fun, "  High bandwidth stream (32 kbps)"
-    #&$mplayer (CBME_oderso=> "http://www.cbc.ca/livemedia/cbcr1-montreal.asx"),
+    #&$mplayer (montreal_CBME_oderso=> "http://www.cbc.ca/livemedia/cbcr1-montreal.asx"),
     # geht nid "Error while parsing chunk header"
 
     # http://en.wikipedia.org/wiki/CISM-FM
@@ -150,7 +150,7 @@ our $mapping=
     #hm schonmalgesehen. flash furchtbar irgendales.
     #und ja seufz nid working.
     #krack download air irgend macromedia krack is n zip file.
-    #&$mplayer(umontreal=> "http://www.cism.umontreal.ca/webmotion/flashservices/gateway.php"),
+    #&$mplayer(montreal_umontreal=> "http://www.cism.umontreal.ca/webmotion/flashservices/gateway.php"),
     #gehtnid.fk
     # http://cism2.cism.umontreal.ca/128/20091007.07.00-09.00.mp3 das geht, einzelne sendung. gr.
     # h *MONO*!
@@ -166,7 +166,7 @@ our $mapping=
     # The station has a smooth jazz format since its inception in December 2004 and identifies itself as Planète 91,9. It was previously known as Couleur Jazz before being re-branded in the summer of 2008.
     # http://planetejazz.ca/
     # http://rms.radiox.com/player/planet/?spc=CKLX
-    &$mplayer (CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
+    &$mplayer (montreal_CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
     # http://rms.radiox.com/player/planet/?spc=CKLX  geht nicht.
     # http://rms.planeteradio.ca/player/planet?spc=CKLX neither.
     # http://rms.planeteradio.ca/player/planet?spc=CKXO neither.
@@ -185,7 +185,7 @@ our $mapping=
     #hm
     # http://www.radiocentreville.com/en/listen.html
     # http://radiocen.streaming.webboreal.com/radiocen.m3u
-    &$mp3 ("centre-ville"=> "http://radiocen.streaming.webboreal.com:10002/"),
+    &$mp3 ("montreal_centre-ville"=> "http://radiocen.streaming.webboreal.com:10002/"),
     # hu mono? wy?
 
     # http://en.wikipedia.org/wiki/CFQR-FM
@@ -289,7 +289,7 @@ our $mapping=
     # http://www.100-1fm.com/
     #recht kaput aussehend aber ja, easy listening...so is das
     # http://74.208.145.53:8002/listen.pls
-    &$mp3 ("Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
+    &$mp3 ("montreal_Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
 
     # http://en.wikipedia.org/wiki/CBFX-FM
     # French-language Canadian radio station located in Montreal
@@ -316,7 +316,7 @@ our $mapping=
     #ehr. 'HTTP request failed: 400 Bad Request'
     #&$mplayer (mikefm=> "http://66.254.44.7:1107/"),
     #geht aber sehr leise und 50 eh 60hz brumm drueber.u
-    &$mplayer (mikefm=> "http://66.254.44.7:1107/"),
+    &$mplayer (montreal_mikefm=> "http://66.254.44.7:1107/"),
     #same
     #auch compression too high. und scheint network kommt nid nach. hm too low levlhir?..
 
