@@ -155,6 +155,24 @@ our $mapping=
     # http://cism2.cism.umontreal.ca/128/20091007.07.00-09.00.mp3 das geht, einzelne sendung. gr.
     # h *MONO*!
 
+    # http://en.wikipedia.org/wiki/CIRA-FM
+    # CIRA-FM is a French language Canadian radio station located in Montreal, Quebec.
+    # It broadcasts on 91.3 MHz with an effective radiated power of 36,200 watts (class C1) using an omnidirectional antenna. Radio Ville-Marie received CRTC approval in 1994 to operate a new religious French-language FM radio programming at Montreal.[1]
+    # This radio station is Catholic and has a religious broadcasting format. Since its inception in 1995 it identifies itself as "Radio Ville-Marie". Unlike many American religious stations, CIRA-FM is not a commercial broadcaster and as such does not carry infomercials.
+    #u
+
+    # http://en.wikipedia.org/wiki/CKLX-FM
+    # Owned and operated by RNC Media, it broadcasts from Mount Royal on 91.9 MHz using a directional antenna with an average effective radiated power of 900 watts and a peak effective radiated power of 2,500 watts
+    # The station has a smooth jazz format since its inception in December 2004 and identifies itself as Planète 91,9. It was previously known as Couleur Jazz before being re-branded in the summer of 2008.
+    # http://planetejazz.ca/
+    # http://rms.radiox.com/player/planet/?spc=CKLX
+    &$mplayer (CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
+    # http://rms.radiox.com/player/planet/?spc=CKLX  geht nicht.
+    # http://rms.planeteradio.ca/player/planet?spc=CKLX neither.
+    # http://rms.planeteradio.ca/player/planet?spc=CKXO neither.
+    # etc.
+    # support@planeteradio.ca
+    
    };
 
 sub Die {
