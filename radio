@@ -94,6 +94,8 @@ our $mapping=
     # http://www.k103radio.com/newversion/index.php
     # http://knw-stream.mohawk.ca:8000/k103.m3u
     &$mp3 ("montreal_k103_CKRK-FM_Mohawk"=> "http://knw-stream.mohawk.ca:8000/k103"),
+    # stereo, quality ok.
+    # (beatles heute zu Tag von irgend)
 
     # http://en.wikipedia.org/wiki/CIBL-FM
     # French-language Canadian radio station located in Montreal
@@ -116,6 +118,8 @@ our $mapping=
     # CKUT is consistently voted as the Best Radio Station in The Montreal Mirror's Best of Montreal Readers Poll.
     # CKUT established and has for the last three years hosted the annual Canadian Homelessness Marathon.
     &$ogg (montreal_CKUT_McGill=> "http://www.ckut.ca:8000/ckut-live.ogg"),
+    # war an sich ok. franz nachrichtensendung hu?
+    # nun aber rechter kanal verloren h
 
     &$mp3 (dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
     &$mp3 (zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
