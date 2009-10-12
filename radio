@@ -187,6 +187,18 @@ our $mapping=
     # http://radiocen.streaming.webboreal.com/radiocen.m3u
     &$mp3 ("centre-ville"=> "http://radiocen.streaming.webboreal.com:10002/"),
     # hu mono? wy?
+
+    # http://en.wikipedia.org/wiki/CFQR-FM
+    # English language Canadian radio station located in Montreal
+    # Owned and operated by Corus Entertainment, it broadcasts on 92.5 MHz with an effective radiated power of 41,400 watts (class C1) using an omnidirectional antenna.
+    # adult contemporary music format since 1989.
+    # the only English-language adult contemporary station in Montreal (the French-language equivalents for Montreal adult contemporary radio are CFGL-FM (Rythme FM) or CITE-FM (RockDétente)
+    # Its main competitor is Astral Media hot AC CJFM-FM (Virgin Radio). ...[?]
+    # put on the air in 1947
+    # [In 1989, when CKGM dropped its adult contemporary format, CFQR began adding vocal artists, and shifted to its current adult contemporary format.]
+    #no luck playing the flash.ch.
+    #Web Design by GENERATION
+
     
    };
 
