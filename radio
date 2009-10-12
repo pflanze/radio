@@ -172,6 +172,21 @@ our $mapping=
     # http://rms.planeteradio.ca/player/planet?spc=CKXO neither.
     # etc.
     # support@planeteradio.ca
+
+    # http://en.wikipedia.org/wiki/CINQ-FM
+    # multilingual Canadian radio station located in Montreal,
+    # 102.3 MHz using a directional antenna with an average effective radiated power of 1,285 watts and a peak effective radiated power of 2,335 watts (class A).
+    # community radio licence and offers varied programming in seven different languages
+    # all programmes are produced and animated by volunteers
+    # identifies itself as "Radio Centre-Ville".
+    # opened on January 27, 1975
+    # Originally, the station aired programming in five different languages, hence the call sign
+    # Those five languages were English, French, Spanish, Portuguese, and Greek. It has since added Creole and Chinese
+    #hm
+    # http://www.radiocentreville.com/en/listen.html
+    # http://radiocen.streaming.webboreal.com/radiocen.m3u
+    &$mp3 ("centre-ville"=> "http://radiocen.streaming.webboreal.com:10002/"),
+    # hu mono? wy?
     
    };
 
