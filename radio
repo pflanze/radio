@@ -319,6 +319,15 @@ our $mapping=
     &$mplayer (mikefm=> "http://66.254.44.7:1107/"),
     #same
     #auch compression too high. und scheint network kommt nid nach. hm too low levlhir?..
+
+    # http://en.wikipedia.org/wiki/CITE-FM
+    # French-language Canadian radio station located in Montreal
+    # Owned and operated by Astral Media, it broadcasts on 107.3 MHz with an effective radiated power of 42,900 watts (class C1) using an omnidirectional antenna from the Mount Royal candelabra tower.
+    # has had an adult contemporary format since 1990 and is the flagship of the RockDétente network which operates across Quebec and Eastern Ontario
+    # started operations in 1977 as a sister station to CKAC 730 .. as "Radio-Cité" ..
+    # Branding 	"RockDétente 107,3"
+    # http://www.rockdetente.com/montreal/accueil/radio-en-direct/?feedType=undefined
+    #hm schon mal gesehen aber dachte andern orts, CH oder so. wabbernde lautsprecher und dümmliches in flash. nid funz.
     
    };
 
