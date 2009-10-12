@@ -266,6 +266,18 @@ our $mapping=
     # http://www.chom.com/
     # The spirit of rock
     #wo abspielen? oder geht nicht.
+
+    # http://en.wikipedia.org/wiki/CJPX-FM
+    # French-language Canadian radio station located in Montreal
+    # Owned and operated by Radio-Classique Montréal, an independent company 90% owned by Jean-Pierre Coallier, it broadcasts on 99.5 MHz using an omnidirectional antenna with an effective radiated power of 8,700 watts (class B).
+    # has had a classical music format since its inception on June 25, 1998 and identifies itself as "Radio-Classique Montréal CJPX 99,5 FM"
+    # main studios are located in Parc Jean-Drapeau on Île Notre-Dame in the Saint Lawrence River
+    # secondary studio off the lobby at Place des Arts, in downtown Montreal
+    # transmits from Mount Royal
+    # station's logo features Beethoven
+    # http://www.cjpx.ca/
+    #hm schon gesehen.
+    #not work, url nicht rausgefunden
     
    };
 
