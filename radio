@@ -124,6 +124,19 @@ our $mapping=
     # www.m1035fm.com   M 103,5 FM - La radio du Grand Lanaudière
     # "http://205.151.16.92:8000/xstream.m3u"
     &$mp3 ("CJLM-FM_joliette"=> "http://205.151.16.92:8000/xstream"),
+
+    # http://en.wikipedia.org/wiki/CBME-FM
+    # Owned and operated by the (government-owned) Canadian Broadcasting Corporation, it broadcasts on 88.5 MHz using a directional antenna with an average effective radiated power of 11,510 watts and a peak effective radiated power of 25,000 watts (class B).
+    # The station has an ad-free news/talk format and is part of the CBC Radio One network which operates across Canada. Like all CBC Radio One stations, but unlike most FM stations, it broadcasts in mono.
+    #U??!
+    # Its studios, along with those of CBC Radio Two sister station CBM-FM, are located at Maison Radio-Canada in Montreal; master control is at the Canadian Broadcasting Centre in Toronto.
+    # 11,510 watts
+    # http://www.cbc.ca/montreal/
+    #hm krieg aber nix rein. und fun, "  High bandwidth stream (32 kbps)"
+    #&$mplayer (CBME_oderso=> "http://www.cbc.ca/livemedia/cbcr1-montreal.asx"),
+    # geht nid "Error while parsing chunk header"
+
+    
    };
 
 sub Die {
