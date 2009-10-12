@@ -150,8 +150,9 @@ our $mapping=
     #krack download air irgend macromedia krack is n zip file.
     #&$mplayer(umontreal=> "http://www.cism.umontreal.ca/webmotion/flashservices/gateway.php"),
     #gehtnid.fk
+    # http://cism2.cism.umontreal.ca/128/20091007.07.00-09.00.mp3 das geht, einzelne sendung. gr.
+    # h *MONO*!
 
-    
    };
 
 sub Die {
