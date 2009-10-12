@@ -297,6 +297,28 @@ our $mapping=
     # featuring mostly classical music, jazz, world music and also other genres
     # http://www.radio-canada.ca/espace_musique/
     #nun. natürlich nicht geh wie alle do oof gov do
+
+    # http://en.wikipedia.org/wiki/CKDG-FM
+    # multilingual Canadian radio station located in Montreal
+    # Owned and operated by John Daperis, it broadcasts on 105.1 MHz using a directional antenna with an average effective radiated power of 141 watts and a peak effective radiated power of 224 watts (class A). Unlike most FM stations, it broadcasts in mono to maximize its Signal to Noise Ratio to all its listeners.
+    #wl actually hör ich most senders mono hier. auch wenn sie multihundertKW sind ja teils.
+    # As per its licence, the station is forbidden to use English or French for more than 35 % of its broadcast schedule.
+    #H
+    # CKDG-FM started in May 2005 to use this time for a variety hits format, but only available during the AM and PM drives, branded as "Mike-FM".
+    # The multilingual programming is primarily Greek but also includes broadcasts in the following languages: Arabic, Armenian, Caribbean, Haitian, Latino, Romanian and Russian.
+    # The station was previously known as CHCR when it was on closed circuit cable for decades, before moving to full-fledged FM in early 2004. [1]
+    #H so neu und doch so schwacher sender wl nj so wenig brauchts eben ?.
+    #h und still band fill und drum wichtig einschrenk was die machen."?"..
+    # http://www.mikefm.ca/
+    #joomla
+    #tj. but, geht?:
+    #&$mp3(mikefm=> "http://66.254.44.7:1107/"),
+    #ehr. 'HTTP request failed: 400 Bad Request'
+    #&$mplayer (mikefm=> "http://66.254.44.7:1107/"),
+    #geht aber sehr leise und 50 eh 60hz brumm drueber.u
+    &$mplayer (mikefm=> "http://66.254.44.7:1107/"),
+    #same
+    #auch compression too high. und scheint network kommt nid nach. hm too low levlhir?..
     
    };
 
