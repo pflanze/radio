@@ -290,6 +290,7 @@ our $mapping=
     #recht kaput aussehend aber ja, easy listening...so is das
     # http://74.208.145.53:8002/listen.pls
     &$mp3 ("montreal_Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
+    # MPEG 1.0 layer III, 96 kbit/s aber blubberqualität. Und mono.
 
     # http://en.wikipedia.org/wiki/CBFX-FM
     # French-language Canadian radio station located in Montreal
