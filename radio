@@ -120,6 +120,7 @@ our $mapping=
     &$ogg (montreal_CKUT_McGill=> "http://www.ckut.ca:8000/ckut-live.ogg"),
     # war an sich ok. franz nachrichtensendung hu?
     # nun aber rechter kanal verloren h
+    # och underruns. networknichtnachkomm?gr.
 
     &$mp3 (dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
     &$mp3 (zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
