@@ -290,6 +290,13 @@ our $mapping=
     #recht kaput aussehend aber ja, easy listening...so is das
     # http://74.208.145.53:8002/listen.pls
     &$mp3 ("Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
+
+    # http://en.wikipedia.org/wiki/CBFX-FM
+    # French-language Canadian radio station located in Montreal
+    # Owned and operated by the (government-owned) Canadian Broadcasting Corporation (French : Société Radio-Canada), it broadcasts on 100.7 MHz from the Mount Royal candelabra tower with an effective radiated power of 100,000 watts (class C1) using an omnidirectional antenna. Its studios and master control are located at Maison Radio-Canada in Montreal.
+    # featuring mostly classical music, jazz, world music and also other genres
+    # http://www.radio-canada.ca/espace_musique/
+    #nun. natürlich nicht geh wie alle do oof gov do
     
    };
 
