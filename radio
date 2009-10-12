@@ -103,6 +103,12 @@ our $mapping=
     &$ogg (radius=> "http://relay.radio.ethz.ch/sender.ogg"),
     &$mp3 (radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
     &$mp3 (localhost=> "http://localhost:1234/"),
+
+    # http://en.wikipedia.org/wiki/CJLM-FM
+    # located in Joliette
+    # www.m1035fm.com   M 103,5 FM - La radio du Grand Lanaudière
+    # "http://205.151.16.92:8000/xstream.m3u"
+    &$mp3 ("CJLM-FM_joliette"=> "http://205.151.16.92:8000/xstream"),
    };
 
 sub Die {
