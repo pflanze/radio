@@ -95,6 +95,14 @@ our $mapping=
     # http://knw-stream.mohawk.ca:8000/k103.m3u
     &$mp3 ("montreal_k103_CKRK-FM"=> "http://knw-stream.mohawk.ca:8000/k103"),
 
+    # http://en.wikipedia.org/wiki/CIBL-FM
+    # French-language Canadian radio station located in Montreal
+    # 101.5 MHz using a directional antenna with an average effective radiated power of 221 watts and a peak effective radiated power of 293 watts
+    # community radio licence
+    # identifies itself as "Radio-Montréal"
+    # originally operated on 104,5 MHz with 16 watts from the top of one of the pyramids of Montreal's olympic village and its target audience at that time was the Hochelaga-Maisonneuve district. Its antenna and transmitter are now located on the olympic stadium and its signal covers the whole city since 1991
+    # hmmm mnsch das hatt ich soeben auf franz gelesn  genau.
+    # http://fr.wikipedia.org/wiki/CIBL
     &$mp3 (montreal_CIBL=> "http://stream02.ustream.ca:8000/cibl128.mp3"),
 
     # http://en.wikipedia.org/wiki/CKUT-FM
