@@ -278,6 +278,18 @@ our $mapping=
     # http://www.cjpx.ca/
     #hm schon gesehen.
     #not work, url nicht rausgefunden
+
+    # http://en.wikipedia.org/wiki/CKVL-FM
+    # Canadian radio station located in Montreal
+    # Owned and operated by La radio communautaire de LaSalle (a non-profit organization), it broadcasts on 100.1 MHz using an omnidirectional antenna with an effective radiated power of 250 watts (class A1).
+    #yw.
+    # The station operates under a community radio licence and identifies itself as "FM 100,1 Radio LaSalle" and is designed to serve the borough of Lasalle; it went on the air on January 8, 2008. [1] Most of the station's programming is in French; however, the station is also authorized to use English. [2]
+    #authorized?H
+    #ev kann man auch andre sprache tunnelen durch ne andre weisch.
+    # http://www.100-1fm.com/
+    #recht kaput aussehend aber ja, easy listening...so is das
+    # http://74.208.145.53:8002/listen.pls
+    &$mp3 ("Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
     
    };
 
