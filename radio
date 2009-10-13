@@ -197,7 +197,7 @@ our $mapping=
     #hm
     # http://www.radiocentreville.com/en/listen.html
     # http://radiocen.streaming.webboreal.com/radiocen.m3u
-    &$mp3 ("montreal_centre-ville"=> "http://radiocen.streaming.webboreal.com:10002/"),
+    &$mp3 ("montreal_centre-ville_CINQ-FM"=> "http://radiocen.streaming.webboreal.com:10002/"),
     # hu mono? wy?
 
     # http://en.wikipedia.org/wiki/CFQR-FM
