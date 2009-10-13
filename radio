@@ -68,7 +68,12 @@ our $mplayer= &$mkplayer (["mplayer",
 			   #hm finde nix
 			  ]);
 our $mp3= &$mkplayer (["mpg123"]);
-our $ogg= &$mkplayer (["ogg123", "-b","100","-p","90"]);
+our $ogg= &$mkplayer (["ogg123",
+		       "-b","180",#
+		       "-p","90",
+		       "--audio-buffer","1000",#
+		       #^ well shouldn't it be 10 times bigger than the input...
+		      ]);
 
 #
 #und lazy wär es klr gl."?"...schongeldoch .
