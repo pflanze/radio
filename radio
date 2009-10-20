@@ -47,7 +47,7 @@ sub xexec {
     #local $^W;
     no warnings;
     exec @_;
-    die "xexec ".singlequote_many(@_).": $!";
+    die "xexec ".join(" ",@_).": $!";
 }
 
 our $run=sub {
