@@ -37,7 +37,13 @@ GetOptions("verbose"=> \$verbose,
 usage unless @ARGV==1 or $opt_l;
 our ($rawkey)=@ARGV;
 
-use Chj::xperlfunc ':all';
+#use Chj::xperlfunc 'xexec';
+sub xexec {
+    #local $^W;
+    no warnings;
+    exec @_;
+    die "xexec ".singlequote_many(@_).": $!";
+}
 
 our $run=sub {
     our ($cmd,@args)=@_;
