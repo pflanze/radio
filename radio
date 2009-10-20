@@ -5,8 +5,13 @@
 
 use strict;
 
-$0=~ /(.*?)([^\/]+)\z/s or die "?";
-my ($mydir, $myname)=($1,$2);
+my ($mydir, $myname);
+BEGIN {
+    $0=~ /(.*?)([^\/]+)\z/s or die "?";
+    ($mydir, $myname)=($1,$2);
+}
+use lib "$mydir/lib";
+
 sub usage {
     print STDERR map{"$_\n"} @_ if @_;
     print "$myname radioname
