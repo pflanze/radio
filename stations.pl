@@ -1,7 +1,4 @@
-    #drs1=> [$mplayer, "mms://dms-cl-021.skypro-media.net/drs1"],
-    #h und eben equivalenzhiernidgegebenhhhhhh,   so:
     (mplayer drs1=> "mms://dms-cl-021.skypro-media.net/drs1"),
-    #krck.
     (mplayer drs2=> "mms://dms-cl-021.skypro-media.net/drs2"),
     (mplayer drs3=> "mms://dms-cl-021.skypro-media.net/drs3"),
     (mplayer drs_virus=> "mms://dms-cl-021.skypro-media.net/virus"),
@@ -9,7 +6,6 @@
     (mplayer drs_musikwelle=> "mms://dms-cl-021.skypro-media.net/mw531"),
 
     (mp3 couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
-    #hm h wer wohl da mp3 drusmacht"??"
 
     # http://en.wikipedia.org/wiki/CKRK-FM
     # English-language Canadian radio station located in Kahnawake, Quebec, a Mohawk Indian reserve near Montreal
