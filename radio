@@ -408,7 +408,6 @@ if ($opt_l) {
 	$trie->add_data ($_, $$mapping{$_}) for (keys %$mapping);
 
 	# filter on values, thus reverse key/value pairs
-	# take in hash to create pairs at all.(sgh) (can't reverse here, since we would loose the complex values)
 	my $res= { $trie->lookup_data ($key) };
 	if (keys %$res) {
 	    my $val;
