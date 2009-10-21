@@ -92,25 +92,16 @@ sub mplayer; sub mp3; sub ogg; # to avoid "used only once" warnings.
 		 "--audio-buffer","1000",#
 		 #^ well shouldn't it be 10 times bigger than the input...
 		]);
-sub stations {
-    #local our @c= @_;
-    local our $r= +{ @_ };
-    #use Chj::repl; repl;
-    $r
-}
-use Chj::repl; repl;
-__END__
 #our $mapping= require $stationsfile;
-our $mapping= eval qq{#line 1 "$stationsfile"\n}.do {
+our $mapping= eval qq[#line 1 "$stationsfile"\n +{\n].do {
     open my $in, "<",$stationsfile;
     local $/;
     my $cnt= <$in>;
     close $in or die;
     $cnt
-};
+}."\n}";
 die $@ if $@;
 
-repl;
 
 sub Die {
     die join("", "$myname: ",@_, "\n")

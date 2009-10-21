@@ -1,4 +1,3 @@
-   (stations
     #drs1=> [$mplayer, "mms://dms-cl-021.skypro-media.net/drs1"],
     #h und eben equivalenzhiernidgegebenhhhhhh,   so:
     (mplayer drs1=> "mms://dms-cl-021.skypro-media.net/drs1"),
@@ -261,4 +260,3 @@
     # http://www.rockdetente.com/montreal/accueil/radio-en-direct/?feedType=undefined
     #hm schon mal gesehen aber dachte andern orts, CH oder so. wabbernde lautsprecher und dümmliches in flash. nid funz.
     
-   )
