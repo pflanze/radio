@@ -49,6 +49,7 @@ sub xexec {
     exec @_;
     die "xexec ".join(" ",@_).": $!";
 }
+use Tree::Trie;
 
 our $run=sub {
     our ($cmd,@args)=@_;
@@ -403,13 +404,6 @@ if ($opt_l) {
     if (my $do= $$mapping{$key}) {
 	&$do
     } else {
-	# search from beginning from string ok.?. how eff well we know well. hmh. tree eben auch wenn nur dings.
-	# trie
-	# well:
-	#  Text::Trie  Text-Trie-0.21 - 09 Aug 1999 - Ilya Zakharevich
-	#  Data::Trie  data-trie-0.01 - 09 Aug 2004 - Mike Hammond 
-	#  Tree::Trie  Tree-Trie-1.5 - 19 Aug 2007 - Avi Finkel
-	use Tree::Trie;
 	local our $trie= new Tree::Trie;
 	$trie->add_data ($_, $$mapping{$_}) for (keys %$mapping);
 
