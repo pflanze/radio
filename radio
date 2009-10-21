@@ -77,12 +77,13 @@ our $mkplayer= sub {
 	)
     }
 };
-sub mplayer; sub mp3; sub ogg; # to avoid "used only once" warnings.
-*mplayer=
+sub mms; sub mp3; sub ogg; # to avoid "used only once" warnings.
+*mms=
     &$mkplayer (["mplayer",
 		 #"-audio-preload","2"  is in mplayer manpage, but is for mencoder only.
 		 #hm finde nix
 		]);
+sub mplayer; *mplayer= \&mms;
 *mp3=
     &$mkplayer (["mpg123"]);
 *ogg=
