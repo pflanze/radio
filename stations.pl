@@ -1,15 +1,15 @@
-  +{
+   (stations
     #drs1=> [$mplayer, "mms://dms-cl-021.skypro-media.net/drs1"],
     #h und eben equivalenzhiernidgegebenhhhhhh,   so:
-    &$mplayer(drs1=> "mms://dms-cl-021.skypro-media.net/drs1"),
+    (mplayer drs1=> "mms://dms-cl-021.skypro-media.net/drs1"),
     #krck.
-    &$mplayer(drs2=> "mms://dms-cl-021.skypro-media.net/drs2"),
-    &$mplayer(drs3=> "mms://dms-cl-021.skypro-media.net/drs3"),
-    &$mplayer(drs_virus=> "mms://dms-cl-021.skypro-media.net/virus"),
-    &$mplayer (drs4=> "mms://dms-cl-021.skypro-media.net/drs4"), # "drs4 News"
-    &$mplayer(drs_musikwelle=> "mms://dms-cl-021.skypro-media.net/mw531"),
+    (mplayer drs2=> "mms://dms-cl-021.skypro-media.net/drs2"),
+    (mplayer drs3=> "mms://dms-cl-021.skypro-media.net/drs3"),
+    (mplayer drs_virus=> "mms://dms-cl-021.skypro-media.net/virus"),
+    (mplayer drs4=> "mms://dms-cl-021.skypro-media.net/drs4"), # "drs4 News"
+    (mplayer drs_musikwelle=> "mms://dms-cl-021.skypro-media.net/mw531"),
 
-    &$mp3(couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
+    (mp3 couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
     #hm h wer wohl da mp3 drusmacht"??"
 
     # http://en.wikipedia.org/wiki/CKRK-FM
@@ -17,7 +17,7 @@
     #  103.7 MHz, ~220 watts
     # http://www.k103radio.com/newversion/index.php
     # http://knw-stream.mohawk.ca:8000/k103.m3u
-    &$mp3 ("montreal_k103_CKRK-FM_Mohawk"=> "http://knw-stream.mohawk.ca:8000/k103"),
+    (mp3 "montreal_k103_CKRK-FM_Mohawk"=> "http://knw-stream.mohawk.ca:8000/k103"),
     # stereo, quality ok.
     # (beatles heute zu Tag von irgend)
 
@@ -29,7 +29,7 @@
     # originally operated on 104,5 MHz with 16 watts from the top of one of the pyramids of Montreal's olympic village and its target audience at that time was the Hochelaga-Maisonneuve district. Its antenna and transmitter are now located on the olympic stadium and its signal covers the whole city since 1991
     # hmmm mnsch das hatt ich soeben auf franz gelesn  genau.
     # http://fr.wikipedia.org/wiki/CIBL
-    &$mp3 ("montreal_CIBL_Radio-Montréal"=> "http://stream02.ustream.ca:8000/cibl128.mp3"),
+    (mp3 "montreal_CIBL_Radio-Montréal"=> "http://stream02.ustream.ca:8000/cibl128.mp3"),
     # stereo, hat Werbung.
     # bissl zu laut eingestellt, überschlag.
 
@@ -41,22 +41,22 @@
     # more than 300 volunteers
     # CKUT is consistently voted as the Best Radio Station in The Montreal Mirror's Best of Montreal Readers Poll.
     # CKUT established and has for the last three years hosted the annual Canadian Homelessness Marathon.
-    &$ogg (montreal_CKUT_McGill=> "http://www.ckut.ca:8000/ckut-live.ogg"),
+    (ogg montreal_CKUT_McGill=> "http://www.ckut.ca:8000/ckut-live.ogg"),
     # war an sich ok. franz nachrichtensendung hu?
     # nun aber rechter kanal verloren h
     # och underruns. networknichtnachkomm?gr.
 
-    &$mp3 (dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
-    &$mp3 (zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
-    &$ogg (radius=> "http://relay.radio.ethz.ch/sender.ogg"),
-    &$mp3 (radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
-    &$mp3 (localhost=> "http://localhost:1234/"),
+    (mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
+    (mp3 zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
+    (ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
+    (mp3 radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
+    (mp3 localhost=> "http://localhost:1234/"),
 
     # http://en.wikipedia.org/wiki/CJLM-FM
     # located in Joliette
     # www.m1035fm.com   M 103,5 FM - La radio du Grand Lanaudière
     # "http://205.151.16.92:8000/xstream.m3u"
-    &$mp3 ("joliette_CJLM-FM"=> "http://205.151.16.92:8000/xstream"),
+    (mp3 "joliette_CJLM-FM"=> "http://205.151.16.92:8000/xstream"),
 
     # http://en.wikipedia.org/wiki/CBME-FM
     # Owned and operated by the (government-owned) Canadian Broadcasting Corporation, it broadcasts on 88.5 MHz using a directional antenna with an average effective radiated power of 11,510 watts and a peak effective radiated power of 25,000 watts (class B).
@@ -66,7 +66,7 @@
     # 11,510 watts
     # http://www.cbc.ca/montreal/
     #hm krieg aber nix rein. und fun, "  High bandwidth stream (32 kbps)"
-    #&$mplayer (montreal_CBME_oderso=> "http://www.cbc.ca/livemedia/cbcr1-montreal.asx"),
+    #(mplayer montreal_CBME_oderso=> "http://www.cbc.ca/livemedia/cbcr1-montreal.asx"),
     # geht nid "Error while parsing chunk header"
 
     # http://en.wikipedia.org/wiki/CISM-FM
@@ -81,7 +81,7 @@
     #hm schonmalgesehen. flash furchtbar irgendales.
     #und ja seufz nid working.
     #krack download air irgend macromedia krack is n zip file.
-    #&$mplayer(montreal_umontreal=> "http://www.cism.umontreal.ca/webmotion/flashservices/gateway.php"),
+    #(mplayer montreal_umontreal=> "http://www.cism.umontreal.ca/webmotion/flashservices/gateway.php"),
     #gehtnid.fk
     # http://cism2.cism.umontreal.ca/128/20091007.07.00-09.00.mp3 das geht, einzelne sendung. gr.
     # h *MONO*!
@@ -97,7 +97,7 @@
     # The station has a smooth jazz format since its inception in December 2004 and identifies itself as Planète 91,9. It was previously known as Couleur Jazz before being re-branded in the summer of 2008.
     # http://planetejazz.ca/
     # http://rms.radiox.com/player/planet/?spc=CKLX
-    #&$mplayer (montreal_CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
+    #(mplayer montreal_CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
     # http://rms.radiox.com/player/planet/?spc=CKLX  geht nicht.
     # http://rms.planeteradio.ca/player/planet?spc=CKLX neither.
     # http://rms.planeteradio.ca/player/planet?spc=CKXO neither.
@@ -116,7 +116,7 @@
     #hm
     # http://www.radiocentreville.com/en/listen.html
     # http://radiocen.streaming.webboreal.com/radiocen.m3u
-    &$mp3 ("montreal_centre-ville_CINQ-FM"=> "http://radiocen.streaming.webboreal.com:10002/"),
+    (mp3 "montreal_centre-ville_CINQ-FM"=> "http://radiocen.streaming.webboreal.com:10002/"),
     # hu mono? wy?
 
     # http://en.wikipedia.org/wiki/CFQR-FM
@@ -164,7 +164,7 @@
     # http://montreal.virginradio.ca/
     # flashplayer geht nid, aber config.json speichern gibt u.a.:
     # "traditionalMP3_streamMount":[ "http://64.34.159.35/cjfm-mp3", "http://64.34.159.52/cjfm-mp3", "http://64.34.159.53/cjfm-mp3", "http://66.244.221.250/cjfm-mp3" ],
-    #&$mp3 (montreal_virgin=> "http://64.34.159.35/cjfm-mp3"),
+    #(mp3 montreal_virgin=> "http://64.34.159.35/cjfm-mp3"),
     # 404 File Not Found u  und die andern ebenfalls.
 
     # http://en.wikipedia.org/wiki/CKOI-FM
@@ -220,7 +220,7 @@
     # http://www.100-1fm.com/
     #recht kaput aussehend aber ja, easy listening...so is das
     # http://74.208.145.53:8002/listen.pls
-    &$mp3 ("montreal_Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
+    (mp3 "montreal_Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
     # MPEG 1.0 layer III, 96 kbit/s aber blubberqualität. Und mono.
 
     # http://en.wikipedia.org/wiki/CBFX-FM
@@ -244,11 +244,11 @@
     # http://www.mikefm.ca/
     #joomla
     #tj. but, geht?:
-    #&$mp3(mikefm=> "http://66.254.44.7:1107/"),
+    #(mp3 mikefm=> "http://66.254.44.7:1107/"),
     #ehr. 'HTTP request failed: 400 Bad Request'
-    #&$mplayer (mikefm=> "http://66.254.44.7:1107/"),
+    #(mplayer mikefm=> "http://66.254.44.7:1107/"),
     #geht aber sehr leise und 50 eh 60hz brumm drueber.u
-    &$mplayer (montreal_mikefm=> "http://66.254.44.7:1107/"),
+    (mplayer montreal_mikefm=> "http://66.254.44.7:1107/"),
     #same
     #auch compression too high. und scheint network kommt nid nach. hm too low levlhir?..
 
@@ -261,4 +261,4 @@
     # http://www.rockdetente.com/montreal/accueil/radio-en-direct/?feedType=undefined
     #hm schon mal gesehen aber dachte andern orts, CH oder so. wabbernde lautsprecher und dümmliches in flash. nid funz.
     
-   }
+   )
