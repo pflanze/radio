@@ -86,9 +86,6 @@ our $ogg= &$mkplayer (["ogg123",
 		       #^ well shouldn't it be 10 times bigger than the input...
 		      ]);
 
-#
-#und lazy wär es klr gl."?"...schongeldoch .
-
 our $mapping=
   +{
     #drs1=> [$mplayer, "mms://dms-cl-021.skypro-media.net/drs1"],
@@ -381,13 +378,10 @@ if ($opt_l) {
 } else {
     {
 	# first try to add the parts split on _, then split on number boundaries;
-	# while never 'risking' random ordering. we order by running code so. order. and then filter so that no random overlay endings happen  jou understand?.
 	local our $add_keys_singles= sub {
 	    local our $filtered= filter_singles \@_;
 	    for my $part (keys %$filtered) {
 		next if $$mapping{$part};
-		#my ($_partagain, $origkey)= @{ $$filtered{$part} };
-		#nope how kam ich druf.  wurden nur einfach mehrfach reingegebn. origkey for every part. aber just origkey. list of lists is nur toplevel ding. das \@_.  heh.
 		my $origkey= $$filtered{$part};
 		$$mapping{$part}=$$mapping{$origkey}
 	    }
@@ -422,8 +416,6 @@ if ($opt_l) {
 	# filter on values, thus reverse key/value pairs
 	# take in hash to create pairs at all.(sgh) (can't reverse here, since we would loose the complex values)
 	my $res= { $trie->lookup_data ($key) };
-	#(see uniq code above but then need something else, just forget and hand code) (shit perl hashes ohne key keeping)
-	# all the values have to be the same
 	if (keys %$res) {
 	    my $val;
 	    for my $k (keys %$res) {
@@ -438,7 +430,6 @@ if ($opt_l) {
 		}
 	    }
 	    &$val
-	      #'so einfach wars'.wl.
 	} else {
 	    Die "station key '$key' not found";
 	}
