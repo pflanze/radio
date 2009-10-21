@@ -25,13 +25,13 @@
     # French-language Canadian radio station located in Montreal
     # 101.5 MHz using a directional antenna with an average effective radiated power of 221 watts and a peak effective radiated power of 293 watts
     # community radio licence
-    # identifies itself as "Radio-Montréal"
+    # identifies itself as "Radio-MontrÃ©al"
     # originally operated on 104,5 MHz with 16 watts from the top of one of the pyramids of Montreal's olympic village and its target audience at that time was the Hochelaga-Maisonneuve district. Its antenna and transmitter are now located on the olympic stadium and its signal covers the whole city since 1991
     # hmmm mnsch das hatt ich soeben auf franz gelesn  genau.
     # http://fr.wikipedia.org/wiki/CIBL
-    &$mp3 ("montreal_CIBL_Radio-Montréal"=> "http://stream02.ustream.ca:8000/cibl128.mp3"),
+    &$mp3 ("montreal_CIBL_Radio-MontrÃ©al"=> "http://stream02.ustream.ca:8000/cibl128.mp3"),
     # stereo, hat Werbung.
-    # bissl zu laut eingestellt, überschlag.
+    # bissl zu laut eingestellt, Ã¼berschlag.
 
     # http://en.wikipedia.org/wiki/CKUT-FM
     # the official campus community radio station of McGill University
@@ -54,7 +54,7 @@
 
     # http://en.wikipedia.org/wiki/CJLM-FM
     # located in Joliette
-    # www.m1035fm.com   M 103,5 FM - La radio du Grand Lanaudière
+    # www.m1035fm.com   M 103,5 FM - La radio du Grand LanaudiÃ¨re
     # "http://205.151.16.92:8000/xstream.m3u"
     &$mp3 ("joliette_CJLM-FM"=> "http://205.151.16.92:8000/xstream"),
 
@@ -70,11 +70,11 @@
     # geht nid "Error while parsing chunk header"
 
     # http://en.wikipedia.org/wiki/CISM-FM
-    # CISM-FM (Communication Information Sur la Montagne) is the official radio station of Université de Montréal. It is student-run on a volunteer basis and can be heard in Montreal, Canada, and its outlying regions,
+    # CISM-FM (Communication Information Sur la Montagne) is the official radio station of UniversitÃ© de MontrÃ©al. It is student-run on a volunteer basis and can be heard in Montreal, Canada, and its outlying regions,
     # 89.3 MHz
     # 10 kW
     #ww
-    # [As early as 1970, Université de Montréal students developed the idea of a French college radio station]
+    # [As early as 1970, UniversitÃ© de MontrÃ©al students developed the idea of a French college radio station]
     # With a broadcasting radius of 70 km, CISM is now the world's largest French-language college radio station.
     #gsh h
     # http://www.cism.umontreal.ca/
@@ -94,7 +94,7 @@
 
     # http://en.wikipedia.org/wiki/CKLX-FM
     # Owned and operated by RNC Media, it broadcasts from Mount Royal on 91.9 MHz using a directional antenna with an average effective radiated power of 900 watts and a peak effective radiated power of 2,500 watts
-    # The station has a smooth jazz format since its inception in December 2004 and identifies itself as Planète 91,9. It was previously known as Couleur Jazz before being re-branded in the summer of 2008.
+    # The station has a smooth jazz format since its inception in December 2004 and identifies itself as PlanÃ¨te 91,9. It was previously known as Couleur Jazz before being re-branded in the summer of 2008.
     # http://planetejazz.ca/
     # http://rms.radiox.com/player/planet/?spc=CKLX
     #&$mplayer (montreal_CKLX=> "http://rms.planeteradio.ca/player/planet?spc=CJLA"),
@@ -123,7 +123,7 @@
     # English language Canadian radio station located in Montreal
     # Owned and operated by Corus Entertainment, it broadcasts on 92.5 MHz with an effective radiated power of 41,400 watts (class C1) using an omnidirectional antenna.
     # adult contemporary music format since 1989.
-    # the only English-language adult contemporary station in Montreal (the French-language equivalents for Montreal adult contemporary radio are CFGL-FM (Rythme FM) or CITE-FM (RockDétente)
+    # the only English-language adult contemporary station in Montreal (the French-language equivalents for Montreal adult contemporary radio are CFGL-FM (Rythme FM) or CITE-FM (RockDÃ©tente)
     # Its main competitor is Astral Media hot AC CJFM-FM (Virgin Radio). ...[?]
     # put on the air in 1947
     # [In 1989, when CKGM dropped its adult contemporary format, CFQR began adding vocal artists, and shifted to its current adult contemporary format.]
@@ -142,7 +142,7 @@
     # Owned and operated by the (government-owned) Canadian Broadcasting Corporation
     # 95.1 MHz from the Mount Royal candelabra tower with an effective radiated power of 100,000 watts (class C1) using an omnidirectional antenna.
     #fck.wrmkrk.
-    # Like all Première Chaîne stations, but unlike most FM stations, it broadcasts in mono.
+    # Like all PremiÃ¨re ChaÃ®ne stations, but unlike most FM stations, it broadcasts in mono.
     #ungbl.
     # went on the air on December 11, 1937, as the CBC launched its French-language network (Radio-Canada).
     # Because of severe reception problems, CBF-FM was authorized to increase its power from 17,030 watts to 100,000 watts on June 2, 2000. The power increase was implemented in mid-2001.
@@ -191,7 +191,7 @@
     # English language Canadian radio station located in Montreal
     # Owned and operated by Astral Media, it broadcasts on 97.7 MHz from the Mount Royal candelabra tower, with an effective radiated power of 41,200 watts (class C1) using an omnidirectional antenna.
     # classic rock format since 2002 and has had some type of rock format since 1969
-    # [It uses the brand name CHOM, pronounced /%GËˆÊƒ%@o%GÊŠ%@m/ "shoam" as if it were a French word, rather than /%GËˆ%@t%GÊƒÉ’%@m/ "chom". It is the only English-language FM station in Montreal to still use its calls on-air.]
+    # [It uses the brand name CHOM, pronounced /%GÃ‹ÂˆÃŠÂƒ%@o%GÃŠÂŠ%@m/ "shoam" as if it were a French word, rather than /%GÃ‹Âˆ%@t%GÃŠÂƒÃ‰Â’%@m/ "chom". It is the only English-language FM station in Montreal to still use its calls on-air.]
     # opened on July 16, 1963
     # ..
     # http://www.chom.com/
@@ -200,9 +200,9 @@
 
     # http://en.wikipedia.org/wiki/CJPX-FM
     # French-language Canadian radio station located in Montreal
-    # Owned and operated by Radio-Classique Montréal, an independent company 90% owned by Jean-Pierre Coallier, it broadcasts on 99.5 MHz using an omnidirectional antenna with an effective radiated power of 8,700 watts (class B).
-    # has had a classical music format since its inception on June 25, 1998 and identifies itself as "Radio-Classique Montréal CJPX 99,5 FM"
-    # main studios are located in Parc Jean-Drapeau on Île Notre-Dame in the Saint Lawrence River
+    # Owned and operated by Radio-Classique MontrÃ©al, an independent company 90% owned by Jean-Pierre Coallier, it broadcasts on 99.5 MHz using an omnidirectional antenna with an effective radiated power of 8,700 watts (class B).
+    # has had a classical music format since its inception on June 25, 1998 and identifies itself as "Radio-Classique MontrÃ©al CJPX 99,5 FM"
+    # main studios are located in Parc Jean-Drapeau on ÃŽle Notre-Dame in the Saint Lawrence River
     # secondary studio off the lobby at Place des Arts, in downtown Montreal
     # transmits from Mount Royal
     # station's logo features Beethoven
@@ -221,19 +221,19 @@
     #recht kaput aussehend aber ja, easy listening...so is das
     # http://74.208.145.53:8002/listen.pls
     &$mp3 ("montreal_Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
-    # MPEG 1.0 layer III, 96 kbit/s aber blubberqualität. Und mono.
+    # MPEG 1.0 layer III, 96 kbit/s aber blubberqualitÃ¤t. Und mono.
 
     # http://en.wikipedia.org/wiki/CBFX-FM
     # French-language Canadian radio station located in Montreal
-    # Owned and operated by the (government-owned) Canadian Broadcasting Corporation (French : Société Radio-Canada), it broadcasts on 100.7 MHz from the Mount Royal candelabra tower with an effective radiated power of 100,000 watts (class C1) using an omnidirectional antenna. Its studios and master control are located at Maison Radio-Canada in Montreal.
+    # Owned and operated by the (government-owned) Canadian Broadcasting Corporation (French : SociÃ©tÃ© Radio-Canada), it broadcasts on 100.7 MHz from the Mount Royal candelabra tower with an effective radiated power of 100,000 watts (class C1) using an omnidirectional antenna. Its studios and master control are located at Maison Radio-Canada in Montreal.
     # featuring mostly classical music, jazz, world music and also other genres
     # http://www.radio-canada.ca/espace_musique/
-    #nun. natürlich nicht geh wie alle do oof gov do
+    #nun. natÃ¼rlich nicht geh wie alle do oof gov do
 
     # http://en.wikipedia.org/wiki/CKDG-FM
     # multilingual Canadian radio station located in Montreal
     # Owned and operated by John Daperis, it broadcasts on 105.1 MHz using a directional antenna with an average effective radiated power of 141 watts and a peak effective radiated power of 224 watts (class A). Unlike most FM stations, it broadcasts in mono to maximize its Signal to Noise Ratio to all its listeners.
-    #wl actually hör ich most senders mono hier. auch wenn sie multihundertKW sind ja teils.
+    #wl actually hÃ¶r ich most senders mono hier. auch wenn sie multihundertKW sind ja teils.
     # As per its licence, the station is forbidden to use English or French for more than 35 % of its broadcast schedule.
     #H
     # CKDG-FM started in May 2005 to use this time for a variety hits format, but only available during the AM and PM drives, branded as "Mike-FM".
@@ -255,10 +255,10 @@
     # http://en.wikipedia.org/wiki/CITE-FM
     # French-language Canadian radio station located in Montreal
     # Owned and operated by Astral Media, it broadcasts on 107.3 MHz with an effective radiated power of 42,900 watts (class C1) using an omnidirectional antenna from the Mount Royal candelabra tower.
-    # has had an adult contemporary format since 1990 and is the flagship of the RockDétente network which operates across Quebec and Eastern Ontario
-    # started operations in 1977 as a sister station to CKAC 730 .. as "Radio-Cité" ..
-    # Branding 	"RockDétente 107,3"
+    # has had an adult contemporary format since 1990 and is the flagship of the RockDÃ©tente network which operates across Quebec and Eastern Ontario
+    # started operations in 1977 as a sister station to CKAC 730 .. as "Radio-CitÃ©" ..
+    # Branding 	"RockDÃ©tente 107,3"
     # http://www.rockdetente.com/montreal/accueil/radio-en-direct/?feedType=undefined
-    #hm schon mal gesehen aber dachte andern orts, CH oder so. wabbernde lautsprecher und dümmliches in flash. nid funz.
+    #hm schon mal gesehen aber dachte andern orts, CH oder so. wabbernde lautsprecher und dÃ¼mmliches in flash. nid funz.
     
    }
