@@ -7,6 +7,7 @@
 
 (mp3 couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM
 # English-language Canadian radio station located in Kahnawake, Quebec, a Mohawk Indian reserve near Montreal
 #  103.7 MHz, ~220 watts
@@ -16,6 +17,7 @@
 # stereo, quality ok.
 # (beatles heute zu Tag von irgend)
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CIBL-FM
 # French-language Canadian radio station located in Montreal
 # 101.5 MHz using a directional antenna with an average effective radiated power of 221 watts and a peak effective radiated power of 293 watts
@@ -28,6 +30,7 @@
 # stereo, hat Werbung.
 # bissl zu laut eingestellt, überschlag.
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKUT-FM
 # the official campus community radio station of McGill University
 # 90.3 FM in Montreal, 91.7 on cable
@@ -47,12 +50,14 @@
 (mp3 radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
 (mp3 localhost=> "http://localhost:1234/"),
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CJLM-FM
 # located in Joliette
 # www.m1035fm.com   M 103,5 FM - La radio du Grand Lanaudière
 # "http://205.151.16.92:8000/xstream.m3u"
 (mp3 "joliette_CJLM-FM"=> "http://205.151.16.92:8000/xstream"),
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CBME-FM
 # Owned and operated by the (government-owned) Canadian Broadcasting Corporation, it broadcasts on 88.5 MHz using a directional antenna with an average effective radiated power of 11,510 watts and a peak effective radiated power of 25,000 watts (class B).
 # The station has an ad-free news/talk format and is part of the CBC Radio One network which operates across Canada. Like all CBC Radio One stations, but unlike most FM stations, it broadcasts in mono.
@@ -64,6 +69,7 @@
 #(mplayer montreal_CBME_oderso=> "http://www.cbc.ca/livemedia/cbcr1-montreal.asx"),
 # geht nid "Error while parsing chunk header"
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CISM-FM
 # CISM-FM (Communication Information Sur la Montagne) is the official radio station of Université de Montréal. It is student-run on a volunteer basis and can be heard in Montreal, Canada, and its outlying regions,
 # 89.3 MHz
@@ -81,12 +87,14 @@
 # http://cism2.cism.umontreal.ca/128/20091007.07.00-09.00.mp3 das geht, einzelne sendung. gr.
 # h *MONO*!
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CIRA-FM
 # CIRA-FM is a French language Canadian radio station located in Montreal, Quebec.
 # It broadcasts on 91.3 MHz with an effective radiated power of 36,200 watts (class C1) using an omnidirectional antenna. Radio Ville-Marie received CRTC approval in 1994 to operate a new religious French-language FM radio programming at Montreal.[1]
 # This radio station is Catholic and has a religious broadcasting format. Since its inception in 1995 it identifies itself as "Radio Ville-Marie". Unlike many American religious stations, CIRA-FM is not a commercial broadcaster and as such does not carry infomercials.
 #u
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKLX-FM
 # Owned and operated by RNC Media, it broadcasts from Mount Royal on 91.9 MHz using a directional antenna with an average effective radiated power of 900 watts and a peak effective radiated power of 2,500 watts
 # The station has a smooth jazz format since its inception in December 2004 and identifies itself as Planète 91,9. It was previously known as Couleur Jazz before being re-branded in the summer of 2008.
@@ -99,6 +107,7 @@
 # etc.
 # support@planeteradio.ca
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CINQ-FM
 # multilingual Canadian radio station located in Montreal,
 # 102.3 MHz using a directional antenna with an average effective radiated power of 1,285 watts and a peak effective radiated power of 2,335 watts (class A).
@@ -114,6 +123,7 @@
 (mp3 "montreal_centre-ville_CINQ-FM"=> "http://radiocen.streaming.webboreal.com:10002/"),
 # hu mono? wy?
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CFQR-FM
 # English language Canadian radio station located in Montreal
 # Owned and operated by Corus Entertainment, it broadcasts on 92.5 MHz with an effective radiated power of 41,400 watts (class C1) using an omnidirectional antenna.
@@ -125,6 +135,7 @@
 #no luck playing the flash.ch.
 #Web Design by GENERATION
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKMF-FM
 # Owned and operated by Astral Media, it broadcasts on 94.3 MHz with an effective radiated power of 41,400 watts (class C1) using an omnidirectional antenna from the Mount Royal candelabra tower.
 # contemporary hit radio format
@@ -132,6 +143,7 @@
 # "NRJ" ach auch
 #und jo flasch das nid geht.
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CBF-FM
 # French-language Canadian radio station located in Montreal
 # Owned and operated by the (government-owned) Canadian Broadcasting Corporation
@@ -147,6 +159,7 @@
 # http://www.radio-canada.ca/radio/
 #wl finde eh nid wo klickenmuss aber geht ja nid wei s i ja schon.
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CJFM-FM
 # English language Canadian radio station located in Montreal
 # Owned and operated by Astral Media, it broadcasts on 95.9 MHz with an effective radiated power of 41,200 watts (class C1) using an omnidirectional antenna.
@@ -162,6 +175,7 @@
 #(mp3 montreal_virgin=> "http://64.34.159.35/cjfm-mp3"),
 # 404 File Not Found u  und die andern ebenfalls.
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKOI-FM
 # French-language Canadian radio station located in Montreal
 # Owned and operated by Corus Entertainment, it broadcasts on 96.9 MHz from the roof of the CIBC Tower in Downtown Montreal with an effective radiated power of 307,000 watts (class C1) using an omnidirectional antenna.
@@ -182,6 +196,7 @@
 #? compliant how  wenndochnidjustpowercountsehr?.
 #wl bringt mich nid hin ohne cookies zu akzeptiern. womit ich aufgeb
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CHOM-FM
 # English language Canadian radio station located in Montreal
 # Owned and operated by Astral Media, it broadcasts on 97.7 MHz from the Mount Royal candelabra tower, with an effective radiated power of 41,200 watts (class C1) using an omnidirectional antenna.
@@ -193,6 +208,7 @@
 # The spirit of rock
 #wo abspielen? oder geht nicht.
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CJPX-FM
 # French-language Canadian radio station located in Montreal
 # Owned and operated by Radio-Classique Montréal, an independent company 90% owned by Jean-Pierre Coallier, it broadcasts on 99.5 MHz using an omnidirectional antenna with an effective radiated power of 8,700 watts (class B).
@@ -205,6 +221,7 @@
 #hm schon gesehen.
 #not work, url nicht rausgefunden
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKVL-FM
 # Canadian radio station located in Montreal
 # Owned and operated by La radio communautaire de LaSalle (a non-profit organization), it broadcasts on 100.1 MHz using an omnidirectional antenna with an effective radiated power of 250 watts (class A1).
@@ -218,6 +235,7 @@
 (mp3 "montreal_Radio_LaSalle_CKVL-FM"=> "http://74.208.145.53:8002/"),
 # MPEG 1.0 layer III, 96 kbit/s aber blubberqualität. Und mono.
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CBFX-FM
 # French-language Canadian radio station located in Montreal
 # Owned and operated by the (government-owned) Canadian Broadcasting Corporation (French : Société Radio-Canada), it broadcasts on 100.7 MHz from the Mount Royal candelabra tower with an effective radiated power of 100,000 watts (class C1) using an omnidirectional antenna. Its studios and master control are located at Maison Radio-Canada in Montreal.
@@ -225,6 +243,7 @@
 # http://www.radio-canada.ca/espace_musique/
 #nun. natürlich nicht geh wie alle do oof gov do
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKDG-FM
 # multilingual Canadian radio station located in Montreal
 # Owned and operated by John Daperis, it broadcasts on 105.1 MHz using a directional antenna with an average effective radiated power of 141 watts and a peak effective radiated power of 224 watts (class A). Unlike most FM stations, it broadcasts in mono to maximize its Signal to Noise Ratio to all its listeners.
@@ -245,6 +264,7 @@
 #geht aber sehr leise und 50 eh 60hz brumm drueber.u
 #auch compression too high. und scheint network kommt nid nach. hm too low levlhir?..
 
+# ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CITE-FM
 # French-language Canadian radio station located in Montreal
 # Owned and operated by Astral Media, it broadcasts on 107.3 MHz with an effective radiated power of 42,900 watts (class C1) using an omnidirectional antenna from the Mount Royal candelabra tower.
