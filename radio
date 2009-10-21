@@ -95,11 +95,11 @@ sub mplayer; sub mp3; sub ogg; # to avoid "used only once" warnings.
 sub stations {
     #local our @c= @_;
     local our $r= +{ @_ };
-    use Chj::repl; repl;
+    #use Chj::repl; repl;
     $r
 }
-#use Chj::repl; repl;
-#__END__
+use Chj::repl; repl;
+__END__
 #our $mapping= require $stationsfile;
 our $mapping= eval qq{#line 1 "$stationsfile"\n}.do {
     open my $in, "<",$stationsfile;
