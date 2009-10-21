@@ -376,43 +376,6 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
     $out
 }
 
-# sub uniq ( $ ) { # array of pairs -> hash containing only those pairs which appear once, *except* if the values are the same, then include one copy. WEll, if it's not the same, just die, rather.
-#     # [ [ "a", 1 ], [ "a", 1 ], [ "b", 3 ] ] -> { "a"=> 1, "b" => 3 }
-#     my ($lis)=@_;
-#     my $out={};
-#     for (@$lis) {
-# 	my ($key,$val)=@$_;
-# 	if (exists $$out{$key}) {
-# 	    if ($$out{$key} eq $val) {
-# 		# ok
-# 	    } else {
-# 		die "multiple different values for key '$key'";
-# 	    }
-# 	} else {
-# 	    $$out{$key}=$val;
-# 	}
-#     }
-#     $out
-# }
-
-#need to map key=>val  with same val  to   val=> [ keys ]   hm.  ach strip it.
-
-
-# sub filter_singles { # values -> values which appear only once  (ordering of values not maintained!)
-#     my $seen= {};
-#     my $out;
-#     for my $key (@_) {
-# 	if ($$seen{$key}) {
-# 	    delete $$out{$key}; # in case we had something
-# 	} else {
-# 	    $$seen{$key}=1;
-# 	    $$out{$key}=undef;
-# 	}
-#     }
-#     keys %$out
-# }
-#use Chj::Backtrace; use Chj::repl; repl;
-#__END__
 if ($opt_l) {
     print map { "$_\n" } sort keys %$mapping
 } else {
