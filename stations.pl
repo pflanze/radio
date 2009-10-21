@@ -241,10 +241,8 @@
 #tj. but, geht?:
 #(mp3 mikefm=> "http://66.254.44.7:1107/"),
 #ehr. 'HTTP request failed: 400 Bad Request'
-#(mplayer mikefm=> "http://66.254.44.7:1107/"),
-#geht aber sehr leise und 50 eh 60hz brumm drueber.u
 (mplayer montreal_mikefm=> "http://66.254.44.7:1107/"),
-#same
+#geht aber sehr leise und 50 eh 60hz brumm drueber.u
 #auch compression too high. und scheint network kommt nid nach. hm too low levlhir?..
 
 # http://en.wikipedia.org/wiki/CITE-FM
