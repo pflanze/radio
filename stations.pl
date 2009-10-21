@@ -7,6 +7,12 @@
 
 (mp3 couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
 
+(mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
+(mp3 zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
+(ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
+(mp3 radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
+(mp3 localhost=> "http://localhost:1234/"),
+
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM
 # English-language Canadian radio station located in Kahnawake, Quebec, a Mohawk Indian reserve near Montreal
@@ -43,12 +49,6 @@
 # war an sich ok. franz nachrichtensendung hu?
 # nun aber rechter kanal verloren h
 # och underruns. networknichtnachkomm?gr.
-
-(mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
-(mp3 zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
-(ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
-(mp3 radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
-(mp3 localhost=> "http://localhost:1234/"),
 
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CJLM-FM
