@@ -18,7 +18,7 @@
   (mp3 di_djmixes=> "http://209.247.146.100:8000"),
   (mp3 di_goapsy=> "http://scfire-ntc-aa03.stream.aol.com:80/stream/1008"),
   (mp3 di_lounge=> "http://scfire-ntc-aa03.stream.aol.com:80/stream/1009"),
-  (mp3 di_minimal=> "http://66.135.35.144:8000"),
+  (mp3 di_minimal=> "http://91.121.120.47:4100"),
   (mp3 di_pianojazz=> "http://88.191.69.43:7814"),
   (mp3 di_smoothjazz=> "http://scfire-dtc-aa02.stream.aol.com:80/stream/1010"),
   (mp3 di_uptemposmoothjazz=> "http://87.98.169.195:8000"),
