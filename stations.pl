@@ -215,7 +215,7 @@
 # English language Canadian radio station located in Montreal
 # Owned and operated by Astral Media, it broadcasts on 97.7 MHz from the Mount Royal candelabra tower, with an effective radiated power of 41,200 watts (class C1) using an omnidirectional antenna.
 # classic rock format since 2002 and has had some type of rock format since 1969
-# [It uses the brand name CHOM, pronounced /%GËÊ%@o%GÊ%@m/ "shoam" as if it were a French word, rather than /%GË%@t%GÊÉ%@m/ "chom". It is the only English-language FM station in Montreal to still use its calls on-air.]
+# [It uses the brand name CHOM, pronounced /ˈʃoʊm/ "shoam" as if it were a French word, rather than /ˈtʃɒm/ "chom". It is the only English-language FM station in Montreal to still use its calls on-air.]
 # opened on July 16, 1963
 # ..
 # http://www.chom.com/
