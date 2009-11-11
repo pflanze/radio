@@ -26,6 +26,8 @@
 (mp3 di_techno=> "http://88.191.102.29:7204"),
 (mp3 di_trance=> "http://scfire-dtc-aa01.stream.aol.com:80/stream/1003"),
 
+(mp3 slayradio=> "http://relay3.slayradio.org:8000/"),
+
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM
 # English-language Canadian radio station located in Kahnawake, Quebec, a Mohawk Indian reserve near Montreal
