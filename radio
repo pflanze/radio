@@ -26,6 +26,7 @@ sub usage {
   Options:
   -l|--list  list known station keys
   --dry-run  only select station, don't open it
+  -m|--mono  mix to a single channel (only works with mpg123 for now)
 
   (Christian Jaeger <$email>)
 ";
@@ -35,10 +36,12 @@ exit (@_ ? 1 : 0);
 use Getopt::Long;
 our $verbose=0;
 our ($opt_l,$opt_dry);
+our $opt_mono;
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
 	   "list"=>\$opt_l,
 	   "dry-run"=> \$opt_dry,
+	   "mono"=> \$opt_mono,
 	   ) or exit 1;
 usage unless @ARGV==1 or $opt_l;
 our ($rawkey)=@ARGV;
@@ -85,7 +88,7 @@ sub mms; sub mp3; sub ogg; # to avoid "used only once" warnings.
 		]);
 sub mplayer; *mplayer= \&mms;
 *mp3=
-    &$mkplayer (["mpg123"]);
+    &$mkplayer (["mpg123", ($opt_mono ? "-m" : ())]);
 *ogg=
     &$mkplayer (["ogg123",
 		 "-b","180",#
