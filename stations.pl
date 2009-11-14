@@ -13,6 +13,13 @@
 # http://www.radioswissjazz.ch/live/mp3.m3u
 (mp3 swissjazz_mp3=> "http://zlz-stream13.streamserver.ch/1/rsj/mp3_128"),
 
+# http://www.r-jazz.ch/en/OnairPlayer.aspx
+# http://broadcast.infomaniak.ch/radiojazz-high.aac.asx
+#(aacplus jazz_international=> "http://broadcast.infomaniak.net:80/radiojazz-high.aac"),
+#hm mplayer has some problem with this stream. (garbled sound)
+# http://broadcast.infomaniak.ch/radiojazz-high.mp3.pls
+(mp3 jazz_international_mp3=> "http://broadcast.infomaniak.net:80/radiojazz-high.mp3"),
+
 (mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
 (mp3 zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
 (ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
