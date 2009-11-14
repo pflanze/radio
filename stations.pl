@@ -19,6 +19,7 @@
 #hm mplayer has some problem with this stream. (garbled sound)
 # http://broadcast.infomaniak.ch/radiojazz-high.mp3.pls
 (mp3 jazz_international_mp3=> "http://broadcast.infomaniak.net:80/radiojazz-high.mp3"),
+# ps. http://www.radio-locator.com/cgi-bin/finfo?id=5034 says "Country Switzerland"
 
 # http://www.rsr.ch/espace-2/
 #nothingworking
