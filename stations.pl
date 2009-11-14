@@ -20,6 +20,12 @@
 # http://broadcast.infomaniak.ch/radiojazz-high.mp3.pls
 (mp3 jazz_international_mp3=> "http://broadcast.infomaniak.net:80/radiojazz-high.mp3"),
 
+# http://www.rsr.ch/espace-2/
+#nothingworking
+(mp3 rsr_dernier_flash=> "http://podcast.rsr.ch/media/flash/flash.mp3"),
+# http://www.rsr.ch/podcast/espace-2
+#those work but, as usual, podcasts only.
+
 (mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
 (mp3 zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
 (ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
