@@ -7,6 +7,12 @@
 
 (mp3 couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
 
+# http://www.radioswissjazz.ch/live/aacp.m3u
+# 64kbps (but same quality? they even have more stars for this stream)
+(aacplus swissjazz=> "http://zlz-stream16.streamserver.ch/1/rsj/aacp_64"),
+# http://www.radioswissjazz.ch/live/mp3.m3u
+(mp3 swissjazz_mp3=> "http://zlz-stream13.streamserver.ch/1/rsj/mp3_128"),
+
 (mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
 (mp3 zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
 (ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
