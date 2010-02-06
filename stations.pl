@@ -75,6 +75,39 @@
 # * Topic for #techbytes is: #Technology Bytes  90.1 FM  - On Air Next Wednesday 8:00 - 10:00 PM
 #aha?
 
+# http://savonet.sourceforge.net/doc-svn/radiopi.html
+# RadioPi is the web radio of the ECP (Ecole Centrale de
+# Paris). RadioPi runs many channels. There are topical channels
+# (Reggae, Hip-Hop, Jazz, ...) and a so-called Web channel which
+# switches from one to another of the topical channels. On top of
+# that, they periodically broadcast live shows, which are relayed on
+# all channels.
+# http://www.radiopi.org/
+# http://www.radiopi.org/RadioPi_playliste.m3u
+(mp3 radiopi_Canal_Web=> "http://radiopi.org:8080/radioPi"),
+(mp3 radiopi_Canal_Rock=> "http://radiopi.org:8080/Rock"),
+(mp3 radiopi_Canal_Reggae=> "http://radiopi.org:8080/reggae"),
+(mp3 radiopi_Canal_DiscoQueen=> "http://radiopi.org:8080/discoqueen"),
+(mp3 radiopi_Canal_Classique=> "http://radiopi.org:8080/classique"),
+(mp3 radiopi_Canal_HipHop=> "http://radiopi.org:8080/HipHop"),
+(mp3 radiopi_Canal_Electro=> "http://radiopi.org:8080/electro"),
+(mp3 radiopi_Canal_That70Sound=> "http://radiopi.org:8080/that70sound"),
+(mp3 radiopi_Canal_Metal=> "http://radiopi.org:8080/metal"),
+(mp3 radiopi_Canal_Jazz=> "http://radiopi.org:8080/jazz"),
+
+# [http://savonet.sourceforge.net/users.html
+# Virtual DJ displays a "powered by Liquidsoap" on its site, and we would love to know more about what's apparently our biggest user
+# ]
+# http://radio.virtualdj.com/live/
+# http://radio.virtualdj.com/listen.pls
+(mp3 virtualdj=> "http://radio2.virtualdj.com:8000/"),
+# (The popup on the homepage shows 3 channels, not sure why then only
+# one is shown on the real page?)
+# d'oh:
+# Note: Illegal Audio-MPEG-Header 0x246dc919 at offset 0x3e81a.
+# [parse.c:657] error: not attempting to resync...
+# [mpg123.c:571] error: ...in decoding next frame: Lost track in the bytestream and did not attempt resync. (code 27)
+
 # /savonet
 
 # ------------------------------------------------------------------
