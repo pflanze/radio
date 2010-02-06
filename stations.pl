@@ -49,6 +49,34 @@
 
 (mp3 slayradio=> "http://relay3.slayradio.org:8000/"),
 
+# From http://savonet.sourceforge.net/users.html :
+# (radius is using it)
+
+# http://dolebrai.net/
+# Dolebraï est une webradio qui ne diffuse que des musiques libres,
+# qui peuvent être librement copiées, distribuées et modifiées.
+#(ogg dolebrai=> "http://dolebrai.net:8000/dolebrai.ogg"),
+#400 Bad Request
+#hum
+
+# http://radioincorrect.org/
+# Wir bauen um - We are reconstructing
+#    Sorry, wir bauen um. Das geht vorbei, versprochen. Unser Tip:
+#    Einfach nochmal in ein paar Tagen / Wochen vorbeischauen.
+#    ...
+# (http modified date:  Tue 11 Nov 2008 09:46:09 AM EST)
+#(ogg inkorrekt=> "http://www.radioinkorrekt.de:8080/radioinkorrekt.org.ogg"),
+#500 Can't connect to www.radioinkorrekt.de:8080 (connect: Connection refused)
+
+# http://www.geekradio.com/
+# (origin of savonet libraries)
+# "We RTFM so you don't have to"
+# http://stream.kpft.org/streamkpft.m3u EHR not found
+# * Topic for #techbytes is: #Technology Bytes  90.1 FM  - On Air Next Wednesday 8:00 - 10:00 PM
+#aha?
+
+# /savonet
+
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM
 # English-language Canadian radio station located in Kahnawake, Quebec, a Mohawk Indian reserve near Montreal
