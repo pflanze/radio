@@ -42,6 +42,9 @@
 (mp3 radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
 (mp3 localhost=> "http://localhost:1234/"),
 
+# (found on debian-user, http://www.radioguerrilla.ro/)
+(aacplus Radio_Guerrilla__romania=> "http://live.eliberadio.ro:8000/"),
+
 # digitally imported:
 (mp3 di_drumandbass=> "http://207.200.96.229:8030"),
 (mp3 di_classical=> "http://scfire-dtc-aa02.stream.aol.com:80/stream/1006"),
