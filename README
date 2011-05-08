@@ -1,0 +1,27 @@
+This is a simple streaming radio player with the stations I'm
+listening to.
+
+I originally wrote it when I moved to Montreal so that I could easily
+listen to local radio stations from my computers running Debian. I'm
+now finding that I rarely listen to those stations and instead to the
+handful of stations I always preferred, but I found that I actually
+like this script more than what music players I configured previously.
+
+It uses a simple text (actually perl code) based station configuration
+file, with configuration triples specifying the type of stream, the
+name and the url. Currently it still requires the url to be the actual
+stream url, not an url to a m3u file or similar, I've thought about
+adding support for the latter but I haven't needed it so far. The
+script simply calls the right player for the stream data type
+(mplayer, ogg123, mpg123). It allows to shorten the name of the radio
+station as long as it isn't ambiguous.
+
+Simply add the path to the directory containing "radio" to your PATH
+(or put a script like this into your existing PATH instead:
+
+ exec /path/to/radio/radio "$@"
+
+Note that symlinking doesn't work since it then won't find the
+stations.pl file.)
+
+Run "radio --help" for more help.
