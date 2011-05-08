@@ -101,7 +101,10 @@ sub mplayer; *mplayer= \&mms;
 sub aacplus; *aacplus= \&mplayer;
 
 *mp3=
-    &$mkplayer (["mpg123", ($opt_mono ? "-m" : ())]);
+  &$mkplayer (["mpg123",
+	       #"-b","55000", nope actually every number is worse than not giving the flag. and ah: not network buffering, but audio buffer size. Maybe doesn't make 'sense' for OSS4 (sic).
+	       ($opt_mono ? "-m" : ()),
+	      ]);
 *ogg=
     &$mkplayer (["ogg123",
 		 "-b","180",#
