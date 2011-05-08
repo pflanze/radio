@@ -12,6 +12,7 @@ BEGIN {
 }
 use lib "$mydir/lib";
 our $stationsfile= "$mydir/stations.pl";
+our $capturecmd= ["capture-http-stream"];
 
 sub usage {
     print STDERR map{"$_\n"} @_ if @_;
@@ -27,6 +28,7 @@ sub usage {
   -l|--list  list known station keys
   --dry-run  only select station, don't open it
   -m|--mono  mix to a single channel (only works with mpg123 for now)
+  --capture  capture stream instead of playing it (using @$capturecmd)
 
   (Christian Jaeger <$email>)
 ";
@@ -37,11 +39,13 @@ use Getopt::Long;
 our $verbose=0;
 our ($opt_l,$opt_dry);
 our $opt_mono;
+our $opt_capture;
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
 	   "list"=>\$opt_l,
 	   "dry-run"=> \$opt_dry,
 	   "mono"=> \$opt_mono,
+	   "capture"=> \$opt_capture,
 	   ) or exit 1;
 usage unless @ARGV==1 or $opt_l;
 our ($rawkey)=@ARGV;
@@ -70,6 +74,10 @@ our $mkplayer= sub {
 	 sub {
 	     if ($opt_dry) {
 		 print "Would play $key ($url) with $playername.\n";
+	     } elsif ($opt_capture) {
+		 my $msg= "*** Capturing $key ($url) ***";
+		 print "$msg\n";
+		 xexec @$capturecmd, $url;
 	     } else {
 		 my $msg= "*** Playing $key ($url) with $playername ***";
 		 my $line= "*"x(length($msg));

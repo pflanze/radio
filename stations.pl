@@ -97,9 +97,9 @@
 (mp3 radiopi_Canal_Reggae=> "http://radiopi.org:8080/reggae"),
 (mp3 radiopi_Canal_DiscoQueen=> "http://radiopi.org:8080/discoqueen"),
 (mp3 radiopi_Canal_Classique=> "http://radiopi.org:8080/classique"),
-(mp3 radiopi_Canal_HipHop=> "http://radiopi.org:8080/HipHop"),
+(mp3 radiopi_Canal_HipHop=> "http://radiopi.org:8080/hiphop"),
 (mp3 radiopi_Canal_Electro=> "http://radiopi.org:8080/electro"),
-(mp3 radiopi_Canal_That70Sound=> "http://radiopi.org:8080/that70sound"),
+(mp3 radiopi_Canal_That70Sound=> "http://radiopi.org:8080/That70Sound"),
 (mp3 radiopi_Canal_Metal=> "http://radiopi.org:8080/metal"),
 (mp3 radiopi_Canal_Jazz=> "http://radiopi.org:8080/jazz"),
 
