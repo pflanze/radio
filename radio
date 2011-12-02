@@ -93,6 +93,7 @@ sub mms; sub mp3; sub ogg; # to avoid "used only once" warnings.
 
 *mms=
     &$mkplayer (["mplayer",
+		 "-cache","100",#lower it from /opt/chj/libexec/mplayer's default
 		 #"-audio-preload","2"  is in mplayer manpage, but is for mencoder only.
 		 #hm finde nix
 		 "-noconsolecontrols", # necessary to be able to put it into background and not STOP itself; there's no good use for the controls for streaming audio anyway, right?
