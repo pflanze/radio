@@ -4,8 +4,9 @@ listening to.
 I originally wrote it when I moved to Montreal so that I could easily
 listen to local radio stations from my computers running Debian. I'm
 now finding that I rarely listen to those stations and instead to the
-handful of stations I always preferred, but I found that I actually
-like this script more than what music players I configured previously.
+handful of stations I always preferred, but I find that I actually
+like this script better than what music players I have configured
+previously.
 
 It uses a simple text (actually perl code) based station configuration
 file, with configuration triples specifying the type of stream, the
