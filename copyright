@@ -1,4 +1,12 @@
-Copyright 2009-2011 Christian Jaeger <chrjae@gmail.com>
+File "lib/Tree/Trie.pm":
+
+Copyright 2007 Avi Finkel, details see in that file; this is a copy
+from the CPAN package, included here just for convenience.
+
+
+Files "radio" and "stations.pl":
+
+Copyright 2009-2011 by Christian Jaeger <chrjae@gmail.com>
 
 Published under the same terms as Perl, meaning, either the GPL or the
 Perl Artistic License according to your choice.
