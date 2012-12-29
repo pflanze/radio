@@ -52,11 +52,12 @@
 (mp3 di_goapsy=> "http://scfire-ntc-aa03.stream.aol.com:80/stream/1008"),
 (mp3 di_lounge=> "http://scfire-ntc-aa03.stream.aol.com:80/stream/1009"),
 (mp3 di_minimal=> "http://91.121.120.47:4100"),
+
+# sky.fm:
+# (First change settings to prefer something else than the builtin
+# flash player on:  http://www.sky.fm/settings)
 # http://www.sky.fm/pianojazz/
-# d'oh only flash now gosh. source code:
-# http:\/\/listen.sky.fm\/public1\/{channel}.pls
-# wget http:\/\/listen.sky.fm\/public1\/pianojazz.pls
-(aacplus di_pianojazz=> "http://u17.sky.fm:80/sky_pianojazz_aacplus"),
+(mp3 di_pianojazz=> "http://pub6.sky.fm:80/sky_pianojazz"),
 (mp3 di_smoothjazz=> "http://scfire-dtc-aa02.stream.aol.com:80/stream/1010"),
 (mp3 di_uptemposmoothjazz=> "http://87.98.169.195:8000"),
 (mp3 di_techno=> "http://88.191.102.29:7204"),
