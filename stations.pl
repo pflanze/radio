@@ -62,7 +62,9 @@
 (mp3 di_techno=> "http://88.191.102.29:7204"),
 (mp3 di_trance=> "http://scfire-dtc-aa01.stream.aol.com:80/stream/1003"),
 
-(mp3 slayradio=> "http://relay5.slayradio.org:8000/"),
+# http://www.slayradio.org/home.php
+# http://www.slayradio.org/tune_in.php/128kbps/listen.m3u
+(mp3 slayradio=> "http://relay1.slayradio.org:8000/"),
 
 # From http://savonet.sourceforge.net/users.html :
 # (radius is using it)
