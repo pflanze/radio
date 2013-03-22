@@ -21,6 +21,7 @@
 #doesn't work anymore  or anyway doesn't work well
 # http://www.radioswissjazz.ch/live/mp3.m3u
 (aacplus swissjazz=> "http://streaming.swisstxt.ch/m/rsj/aacp_64"),
+(mp3 swissjazz_mp3=> "http://stream.srg-ssr.ch/m/rsj/mp3_128"),
 
 # http://www.r-jazz.ch/en/OnairPlayer.aspx
 # http://broadcast.infomaniak.ch/radiojazz-high.aac.asx
