@@ -20,7 +20,7 @@
 #(aacplus swissjazz=> "http://zlz-stream16.streamserver.ch/1/rsj/aacp_64"),
 #doesn't work anymore  or anyway doesn't work well
 # http://www.radioswissjazz.ch/live/mp3.m3u
-(mp3 swissjazz=> "http://zlz-stream13.streamserver.ch/1/rsj/mp3_128"),
+(aacplus swissjazz=> "http://streaming.swisstxt.ch/m/rsj/aacp_64"),
 
 # http://www.r-jazz.ch/en/OnairPlayer.aspx
 # http://broadcast.infomaniak.ch/radiojazz-high.aac.asx
