@@ -1,17 +1,17 @@
 # http://stream.srg-ssr.ch/drs1/mp3_128.m3u
-(mp3 drs1=> "http://zlz-stream11.streamserver.ch/1/drs1/mp3_128"),
+(mp3 drs1=> "http://streaming.swisstxt.ch/m/drs1/mp3_128"),
 # http://stream.srg-ssr.ch/drs2/mp3_128.m3u
-(mp3 drs2=> "http://zlz-stream10.streamserver.ch/1/drs2/mp3_128"),
+(mp3 drs2=> "http://streaming.swisstxt.ch/m/drs2/mp3_128"),
 # http://stream.srg-ssr.ch/drs3/mp3_128.m3u
-(mp3 drs3=> "http://zlz-stream13.streamserver.ch/1/drs3/mp3_128"),
+(mp3 drs3=> "http://streaming.swisstxt.ch/m/drs3/mp3_128"),
 # http://stream.srg-ssr.ch/drsvirus/mp3_128.m3u
-(mp3 drs_virus=> "http://glb-stream12.streamserver.ch/1/drsvirus/mp3_128"),
+(mp3 drs_virus=> "http://streaming.swisstxt.ch/m/drsvirus/mp3_128"),
 # http://stream.srg-ssr.ch/drs4news/mp3_128.m3u
-(mp3 drs4_news=> "http://zlz-stream12.streamserver.ch/1/drs4news/mp3_128"),
+(mp3 drs4_news=> "http://streaming.swisstxt.ch/m/drs4news/mp3_128"),
 # http://stream.srg-ssr.ch/drsmw/mp3_128.m3u
-(mp3 drs_musikwelle=> "http://zlz-stream11.streamserver.ch/1/drsmw/mp3_128"),
+(mp3 drs_musikwelle=> "http://streaming.swisstxt.ch/m/drsmw/mp3_128"),
 # http://www.radioswissclassic.ch/live/mp3.m3u
-(mp3 swissclassic=> "http://glb-stream11.streamserver.ch/1/rsc_de/mp3_128"),
+(mp3 swissclassic=> "http://streaming.swisstxt.ch/m/rsc_de/mp3_128"),
 
 (mp3 couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
 
