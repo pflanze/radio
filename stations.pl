@@ -172,7 +172,7 @@
 # www.m1035fm.com   M 103,5 FM - La radio du Grand Lanaudière
 # effective radiated power of 3,000 watts (class A)
 # "http://205.151.16.92:8000/xstream.m3u"
-(mp3 "joliette_CJLM-FM"=> "http://205.151.16.92:8000/xstream"),
+(mp3 "joliette_CJLM-FM"=> "http://207.253.100.153:8000/m1035fm"),
 
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CBME-FM
