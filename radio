@@ -112,6 +112,7 @@ sub aacplus; *aacplus= \&mplayer;
 		 "-p","90",
 		 "--audio-buffer","1000",#
 		 #^ well shouldn't it be 10 times bigger than the input...
+		 "-q", # avoid using much CPU for screen updating (in rlwrap/urxvt/Xorg)
 		]);
 
 #our $mapping= require $stationsfile;
