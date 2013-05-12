@@ -26,3 +26,12 @@ Note that symlinking doesn't work since it then won't find the
 stations.pl file.)
 
 Run "radio --help" for more help.
+
+I'm running it the following way:
+
+ rlwrap »» radio
+
+(»» is a program from https://github.com/pflanze/chj-bin .) This way I
+can just type (part of) the name of a station and hit enter, then
+ctl-c and enter another name, or use the history functionality
+provided by rlwrap.
