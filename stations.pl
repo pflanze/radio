@@ -21,7 +21,7 @@
 #doesn't work anymore  or anyway doesn't work well
 # http://www.radioswissjazz.ch/live/mp3.m3u
 (aacplus swissjazz=> "http://streaming.swisstxt.ch/m/rsj/aacp_64"),
-(mp3 swissjazz_mp3=> "http://stream.srg-ssr.ch/m/rsj/mp3_128"),
+(mp3 mp3_swissjazz=> "http://stream.srg-ssr.ch/m/rsj/mp3_128"),
 
 # http://www.r-jazz.ch/en/OnairPlayer.aspx
 # http://broadcast.infomaniak.ch/radiojazz-high.aac.asx
@@ -38,9 +38,10 @@
 #those work but, as usual, podcasts only.
 
 (mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
-(mp3 zinzine=> "http://213.251.135.149:8000/radio-zinzine-live"),
+(aacplus zinzine=> "http://91.121.65.189:8000/2"), # AAC+48kb/s
+(mp3 mp3_zinzine=> "http://91.121.65.189:8000/3"), # 192.0 kbit
 (ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
-(mp3 radius_mp3=> "http://relay.radio.ethz.ch/sender.mp3"),
+(mp3 mp3_radius=> "http://relay.radio.ethz.ch/sender.mp3"),
 (mp3 localhost=> "http://localhost:1234/"),
 
 # (found on debian-user, http://www.radioguerrilla.ro/)
