@@ -13,7 +13,8 @@
 # http://www.radioswissclassic.ch/live/mp3.m3u
 (mp3 swissclassic=> "http://streaming.swisstxt.ch/m/rsc_de/mp3_128"),
 
-(mp3 couleur3=> "http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3"), # http://kevin.denis.free.fr/tips/radio.html 'mplayer `lynx -dump http://real.xobix.ch/live/rsr3.ram | grep rtsp | head -1`'  hm geht nimmer aber das file actually contains 'http://broadcast.infomaniak.net:8000/rsr-couleur3-high.mp3' wow
+# http://www.broadcast.ch/portal.aspx?pid=564&lang=fr
+(mp3 couleur3=> "http://stream.srg-ssr.ch/m/couleur3/mp3_128"),
 
 # http://www.radioswissjazz.ch/live/aacp.m3u
 # 64kbps (but same quality? they even have more stars for this stream)
