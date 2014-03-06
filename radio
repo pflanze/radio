@@ -96,6 +96,7 @@ sub mms; sub mp3; sub ogg; # to avoid "used only once" warnings.
 
 *mms=
     &$mkplayer (["mplayer",
+		 "-quiet",
 		 ($opt_ao ? ("-ao",$opt_ao) : ()),
 		 "-cache","200",#lower it from /opt/chj/libexec/mplayer's default
 		 #"-audio-preload","2"  is in mplayer manpage, but is for mencoder only.
