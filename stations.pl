@@ -131,6 +131,11 @@
 
 # /savonet
 
+
+# http://dnbradio.com/
+#(mp3 dnbradio=> "http://source.dnbradio.com:10128/dnbradio_darkstep.mp3"),
+(mp3 dnbradio=> "http://crash.dnbradio.com:10128/dnbradio_main.mp3"),
+
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM
 # English-language Canadian radio station located in Kahnawake, Quebec, a Mohawk Indian reserve near Montreal
