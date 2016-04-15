@@ -67,10 +67,10 @@
 (mp3 di_trance=> "http://scfire-dtc-aa01.stream.aol.com:80/stream/1003"),
 
 # http://www.internet-radio.com/stations/drum%20and%20bass/
-(mp3 danceradiouk=> "http://uk2.internet-radio.com:30252/"),
+(mp3 dnb3_danceradiouk=> "http://uk2.internet-radio.com:30252/"),
 #  partyvibe: http://www.partyviberadio.com:8004/listen.pls?sid=1 returns playlist:
-(mp3 partyvibe=> "http://107.182.233.214:8004/stream"),
-(mp3 the_eye_of_destiny=> "http://uk3.internet-radio.com:8039/"),
+(mp3 dnb4_partyvibe=> "http://107.182.233.214:8004/stream"),
+(mp3 dnb2_the_eye_of_destiny=> "http://uk3.internet-radio.com:8039/"),
 
 # http://www.slayradio.org/home.php
 # http://www.slayradio.org/tune_in.php/128kbps/listen.m3u
@@ -140,7 +140,7 @@
 
 # http://dnbradio.com/
 #(mp3 dnbradio=> "http://source.dnbradio.com:10128/dnbradio_darkstep.mp3"),
-(mp3 dnbradio=> "http://crash.dnbradio.com:10128/dnbradio_main.mp3"),
+(mp3 dnb1_dnbradio=> "http://crash.dnbradio.com:10128/dnbradio_main.mp3"),
 
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM
