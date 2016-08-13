@@ -26,7 +26,7 @@ sub usage {
 
   Options:
   -l|--list  list known station keys
-  -L|--List  list known station keys including bitrate (where given)
+  -b|--bitrate  list known station keys including bitrate (where given)
   --dry-run  only select station, don't open it
   -m|--mono  mix to a single channel (only works with mpg123 for now)
   --capture  capture stream instead of playing it (using @$capturecmd)
@@ -39,20 +39,20 @@ exit (@_ ? 1 : 0);
 
 use Getopt::Long;
 our $verbose=0;
-our ($opt_l,$opt_L,$opt_dry);
+our ($opt_l,$opt_bitrate,$opt_dry);
 our $opt_mono;
 our $opt_capture;
 our $opt_ao;
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
 	   "list"=>\$opt_l,
-	   "List"=>\$opt_L,
+	   "bitrate"=>\$opt_bitrate,
 	   "dry-run"=> \$opt_dry,
 	   "mono"=> \$opt_mono,
 	   "capture"=> \$opt_capture,
 	   "ao=s"=> \$opt_ao,
 	   ) or exit 1;
-usage unless @ARGV==1 or $opt_l;
+usage unless @ARGV==1 or $opt_l or $opt_bitrate;
 our ($rawkey)=@ARGV;
 
 #use Chj::xperlfunc 'xexec';
@@ -170,7 +170,7 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
     $out
 }
 
-if ($opt_L) {
+if ($opt_bitrate) {
     print map {
 	my ($do, $maybe_bitrate)= @{$$mapping{$_}};
 	my $br= $maybe_bitrate // "";
