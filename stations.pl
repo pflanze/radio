@@ -1,28 +1,28 @@
 # http://stream.srg-ssr.ch/drs1/mp3_128.m3u
-(mp3 drs1=> "http://streaming.swisstxt.ch/m/drs1/mp3_128"),
+(mp3 drs1=> "http://streaming.swisstxt.ch/m/drs1/mp3_128", 128),
 # http://stream.srg-ssr.ch/drs2/mp3_128.m3u
-(mp3 drs2=> "http://streaming.swisstxt.ch/m/drs2/mp3_128"),
+(mp3 drs2=> "http://streaming.swisstxt.ch/m/drs2/mp3_128", 128),
 # http://stream.srg-ssr.ch/drs3/mp3_128.m3u
-(mp3 drs3=> "http://streaming.swisstxt.ch/m/drs3/mp3_128"),
+(mp3 drs3=> "http://streaming.swisstxt.ch/m/drs3/mp3_128", 128),
 # http://stream.srg-ssr.ch/drsvirus/mp3_128.m3u
-(mp3 drs_virus=> "http://streaming.swisstxt.ch/m/drsvirus/mp3_128"),
+(mp3 drs_virus=> "http://streaming.swisstxt.ch/m/drsvirus/mp3_128", 128),
 # http://stream.srg-ssr.ch/drs4news/mp3_128.m3u
-(mp3 drs4_news=> "http://streaming.swisstxt.ch/m/drs4news/mp3_128"),
+(mp3 drs4_news=> "http://streaming.swisstxt.ch/m/drs4news/mp3_128", 128),
 # http://stream.srg-ssr.ch/drsmw/mp3_128.m3u
-(mp3 drs_musikwelle=> "http://streaming.swisstxt.ch/m/drsmw/mp3_128"),
+(mp3 drs_musikwelle=> "http://streaming.swisstxt.ch/m/drsmw/mp3_128", 128),
 # http://www.radioswissclassic.ch/live/mp3.m3u
-(mp3 swissclassic=> "http://streaming.swisstxt.ch/m/rsc_de/mp3_128"),
+(mp3 swissclassic=> "http://streaming.swisstxt.ch/m/rsc_de/mp3_128", 128),
 
 # http://www.broadcast.ch/portal.aspx?pid=564&lang=fr
-(mp3 couleur3=> "http://stream.srg-ssr.ch/m/couleur3/mp3_128"),
+(mp3 couleur3=> "http://stream.srg-ssr.ch/m/couleur3/mp3_128", 128),
 
 # http://www.radioswissjazz.ch/live/aacp.m3u
 # 64kbps (but same quality? they even have more stars for this stream)
 #(aacplus swissjazz=> "http://zlz-stream16.streamserver.ch/1/rsj/aacp_64"),
 #doesn't work anymore  or anyway doesn't work well
 # http://www.radioswissjazz.ch/live/mp3.m3u
-(aacplus swissjazz=> "http://stream.srg-ssr.ch/m/rsj/aacp_96"),
-(mp3 mp3_swissjazz=> "http://stream.srg-ssr.ch/m/rsj/mp3_128"),
+(aacplus swissjazz=> "http://stream.srg-ssr.ch/m/rsj/aacp_96", 96),
+(mp3 mp3_swissjazz=> "http://stream.srg-ssr.ch/m/rsj/mp3_128", 128),
 
 # http://www.r-jazz.ch/en/OnairPlayer.aspx
 # http://broadcast.infomaniak.ch/radiojazz-high.aac.asx
@@ -38,9 +38,9 @@
 # http://www.rsr.ch/podcast/espace-2
 #those work but, as usual, podcasts only.
 
-(mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio"),
-(aacplus zinzine=> "http://91.121.65.189:8000/2"), # AAC+48kb/s
-(mp3 mp3_zinzine=> "http://91.121.65.189:8000/3"), # 192.0 kbit
+(mp3 dnaradio_dnalounge=> "http://cerebrum.dnalounge.com:8000/radio", 128),
+(aacplus zinzine=> "http://91.121.65.189:8000/2", 48), # AAC+48kb/s
+(mp3 mp3_zinzine=> "http://91.121.65.189:8000/3", 192), # 192.0 kbit
 (ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
 (mp3 mp3_radius=> "http://relay.radio.ethz.ch/sender.mp3"),
 (mp3 localhost=> "http://localhost:1234/"),
@@ -74,7 +74,7 @@
 
 # http://www.slayradio.org/home.php
 # http://www.slayradio.org/tune_in.php/128kbps/listen.m3u
-(mp3 slayradio=> "http://relay1.slayradio.org:8000/"),
+(mp3 slayradio=> "http://relay1.slayradio.org:8000/", 128),
 
 # From http://savonet.sourceforge.net/users.html :
 # (radius is using it)
@@ -140,7 +140,7 @@
 
 # http://dnbradio.com/
 #(mp3 dnbradio=> "http://source.dnbradio.com:10128/dnbradio_darkstep.mp3"),
-(mp3 dnb1_dnbradio=> "http://crash.dnbradio.com:10128/dnbradio_main.mp3"),
+(mp3 dnb1_dnbradio=> "http://crash.dnbradio.com:10128/dnbradio_main.mp3", 192),
 
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM

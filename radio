@@ -26,6 +26,7 @@ sub usage {
 
   Options:
   -l|--list  list known station keys
+  -L|--List  list known station keys including bitrate (where given)
   --dry-run  only select station, don't open it
   -m|--mono  mix to a single channel (only works with mpg123 for now)
   --capture  capture stream instead of playing it (using @$capturecmd)
@@ -38,13 +39,14 @@ exit (@_ ? 1 : 0);
 
 use Getopt::Long;
 our $verbose=0;
-our ($opt_l,$opt_dry);
+our ($opt_l,$opt_L,$opt_dry);
 our $opt_mono;
 our $opt_capture;
 our $opt_ao;
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
 	   "list"=>\$opt_l,
+	   "List"=>\$opt_L,
 	   "dry-run"=> \$opt_dry,
 	   "mono"=> \$opt_mono,
 	   "capture"=> \$opt_capture,
@@ -75,23 +77,26 @@ our $mkplayer= sub {
     my ($player,$maybe_playername)=@_;
     my $playername= $maybe_playername || $$player[0];
     sub {
-	@_ == 2 or die "expecting 2 arguments";
-	my ($key,$url)=@_;
+	@_ == 2 or @_ == 3 or die "expecting 2-3 arguments";
+	my ($key, $url, $maybe_bitrate)=@_;
 	(lc($key),
-	 sub {
-	     if ($opt_dry) {
-		 print "Would play $key ($url) with $playername.\n";
-	     } elsif ($opt_capture) {
-		 my $msg= "*** Capturing $key ($url) ***";
-		 print "$msg\n";
-		 xexec @$capturecmd, $url;
-	     } else {
-		 my $msg= "*** Playing $key ($url) with $playername ***";
-		 my $line= "*"x(length($msg));
-		 print "$line\n$msg\n$line\n";
-		 &$run ($player,$url)
-	     }
-	 }
+	 [
+	  sub {
+	      if ($opt_dry) {
+		  print "Would play $key ($url) with $playername.\n";
+	      } elsif ($opt_capture) {
+		  my $msg= "*** Capturing $key ($url) ***";
+		  print "$msg\n";
+		  xexec @$capturecmd, $url;
+	      } else {
+		  my $msg= "*** Playing $key ($url) with $playername ***";
+		  my $line= "*"x(length($msg));
+		  print "$line\n$msg\n$line\n";
+		  &$run ($player,$url)
+	      }
+	  },
+	  $maybe_bitrate
+	 ]
 	)
     }
 };
@@ -165,7 +170,13 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
     $out
 }
 
-if ($opt_l) {
+if ($opt_L) {
+    print map {
+	my ($do, $maybe_bitrate)= @{$$mapping{$_}};
+	my $br= $maybe_bitrate // "";
+	"$br\t$_\n"
+    } sort keys %$mapping
+} elsif ($opt_l) {
     print map { "$_\n" } sort keys %$mapping
 } else {
     {
@@ -192,7 +203,7 @@ if ($opt_l) {
 			   keys %$mapping);
     }
     my $key= lc $rawkey;
-    if (my $do= $$mapping{$key}) {
+    if (my ($do,$maybe_bitrate)= @{$$mapping{$key}}) {
 	&$do
     } else {
 	local our $trie= new Tree::Trie;
@@ -213,7 +224,8 @@ if ($opt_l) {
 		    $val= $$res{$k}
 		}
 	    }
-	    &$val
+	    my ($do,$maybe_bitrate)= @$val;
+	    &$do
 	} else {
 	    Die "station key '$key' not found";
 	}
