@@ -69,7 +69,7 @@
 # http://www.internet-radio.com/stations/drum%20and%20bass/
 (mp3 dnb3_danceradiouk=> "http://uk2.internet-radio.com:30252/", 128),
 #  partyvibe: http://www.partyviberadio.com:8004/listen.pls?sid=1 returns playlist:
-(mp3 dnb4_partyvibe=> "http://107.182.233.214:8004/stream"),
+#(mp3 dnb4_partyvibe=> "http://107.182.233.214:8004/stream"),
 (mp3 dnb2_the_eye_of_destiny=> "http://uk3.internet-radio.com:8039/", 128),
 
 # http://www.slayradio.org/home.php
