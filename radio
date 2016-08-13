@@ -203,7 +203,8 @@ if ($opt_bitrate) {
 			   keys %$mapping);
     }
     my $key= lc $rawkey;
-    if (my ($do,$maybe_bitrate)= @{$$mapping{$key}}) {
+    if (exists $$mapping{$key}) {
+	my ($do,$maybe_bitrate)= @{$$mapping{$key}};
 	&$do
     } else {
 	local our $trie= new Tree::Trie;
