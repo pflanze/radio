@@ -67,10 +67,10 @@
 (mp3 di_trance=> "http://scfire-dtc-aa01.stream.aol.com:80/stream/1003"),
 
 # http://www.internet-radio.com/stations/drum%20and%20bass/
-(mp3 dnb3_danceradiouk=> "http://uk2.internet-radio.com:30252/"),
+(mp3 dnb3_danceradiouk=> "http://uk2.internet-radio.com:30252/", 128),
 #  partyvibe: http://www.partyviberadio.com:8004/listen.pls?sid=1 returns playlist:
 (mp3 dnb4_partyvibe=> "http://107.182.233.214:8004/stream"),
-(mp3 dnb2_the_eye_of_destiny=> "http://uk3.internet-radio.com:8039/"),
+(mp3 dnb2_the_eye_of_destiny=> "http://uk3.internet-radio.com:8039/", 128),
 
 # http://www.slayradio.org/home.php
 # http://www.slayradio.org/tune_in.php/128kbps/listen.m3u
@@ -148,7 +148,7 @@
 #  103.7 MHz, ~220 watts
 # http://www.k103radio.com/newversion/index.php
 # http://knw-stream.mohawk.ca:8000/k103.m3u
-(mp3 "montreal_k103_CKRK-FM_Mohawk"=> "http://knw-stream.mohawk.ca:8000/k103"),
+(mp3 "montreal_k103_CKRK-FM_Mohawk"=> "http://knw-stream.mohawk.ca:8000/k103", 96),
 # stereo, quality ok.
 # (beatles heute zu Tag von irgend)
 
@@ -161,7 +161,7 @@
 # originally operated on 104,5 MHz with 16 watts from the top of one of the pyramids of Montreal's olympic village and its target audience at that time was the Hochelaga-Maisonneuve district. Its antenna and transmitter are now located on the olympic stadium and its signal covers the whole city since 1991
 # hmmm mnsch das hatt ich soeben auf franz gelesn  genau.
 # http://fr.wikipedia.org/wiki/CIBL
-(mp3 "montreal_CIBL_Radio-Montréal"=> "http://stream02.ustream.ca:8000/cibl128.mp3"),
+(mp3 "montreal_CIBL_Radio-Montréal"=> "http://stream02.ustream.ca:8000/cibl128.mp3", 128),
 # stereo, hat Werbung.
 # bissl zu laut eingestellt, überschlag.
 
