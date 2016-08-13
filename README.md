@@ -17,21 +17,32 @@ script simply calls the right player for the stream data type
 (mplayer, ogg123, mpg123). It allows to shorten the name of the radio
 station as long as it isn't ambiguous.
 
-Simply add the path to the directory containing "radio" to your PATH
+Simply add the path to the directory containing `radio` to your PATH
 (or put a script like this into your existing PATH instead:
 
- exec /path/to/radio/radio "$@"
+    exec /path/to/radio/radio "$@"
 
 Note that symlinking doesn't work since it then won't find the
 stations.pl file.)
 
-Run "radio --help" for more help.
+Run `radio --help` for more help.
 
 I'm running it the following way:
 
- rlwrap »» radio
+    rlwrap »» radio
 
-(»» is a program from https://github.com/pflanze/chj-bin .) This way I
-can just type (part of) the name of a station and hit enter, then
-ctl-c and enter another name, or use the history functionality
-provided by rlwrap.
+(`»»` is a program from
+[https://github.com/pflanze/chj-bin](https://github.com/pflanze/chj-bin).)
+This way I can just type (part of) the name of a station and hit
+enter, then ctl-c and enter another name, or use the history
+functionality provided by rlwrap.
+
+## Tip
+
+mpg123 and perhaps other players can get stuck in a situation where
+they hold a lock of the ALSA system, but you need to kill them. The
+ALSA lock is not released in those cases and leads to the sound system
+being in a deadlocked state afterwards. Use my
+[`alsafix`](https://github.com/pflanze/chj-bin/) script to explicitely
+remove all the locks in such a situation (this saves you from having
+to reboot).
