@@ -29,7 +29,7 @@
 #(aacplus jazz_international=> "http://broadcast.infomaniak.net:80/radiojazz-high.aac"),
 #hm mplayer has some problem with this stream. (garbled sound)
 # http://broadcast.infomaniak.ch/radiojazz-high.mp3.pls
-(mp3 jazz_international_mp3=> "http://broadcast.infomaniak.net:80/radiojazz-high.mp3"),
+(mp3 jazz_international_mp3=> "http://broadcast.infomaniak.net:80/radiojazz-high.mp3", 128),
 # ps. http://www.radio-locator.com/cgi-bin/finfo?id=5034 says "Country Switzerland"
 
 # http://www.rsr.ch/espace-2/
@@ -42,7 +42,7 @@
 (aacplus zinzine=> "http://91.121.65.189:8000/2", 48), # AAC+48kb/s
 (mp3 mp3_zinzine=> "http://91.121.65.189:8000/3", 192), # 192.0 kbit
 (ogg radius=> "http://relay.radio.ethz.ch/sender.ogg"),
-(mp3 mp3_radius=> "http://relay.radio.ethz.ch/sender.mp3"),
+(mp3 mp3_radius=> "http://relay.radio.ethz.ch/sender.mp3", 128),
 (mp3 localhost=> "http://localhost:1234/"),
 
 # (found on debian-user, http://www.radioguerrilla.ro/)
