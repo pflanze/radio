@@ -67,6 +67,10 @@ our $run=sub {
     xexec (@$cmd,@args)
 };
 
+#use lib "/home/chrisperl/functional-perl/lib";
+#use Chj::Trapl;
+use Chj::Backtrace;
+
 our $mkplayer= sub {
     my ($player,$maybe_playername)=@_;
     my $playername= $maybe_playername || $$player[0];
@@ -123,15 +127,21 @@ sub aacplus; *aacplus= \&mplayer;
 		"-q", # avoid using much CPU for screen updating (in rlwrap/urxvt/Xorg)
 	       ]));
 
-#our $mapping= require $stationsfile;
-our $mapping= eval qq[#line 1 "$stationsfile"\n +{\n].do {
+# wrap stationsfile with +{ }; and load it in a way that allows Trapl
+# access to the context, sigh.
+our $mapping= do {
+    my $sub= eval qq[#line 1 "$stationsfile"\n sub{+{].do {
     open my $in, "<",$stationsfile;
     local $/;
     my $cnt= <$in>;
     close $in or die;
     $cnt
-}."\n}";
-die $@ if $@;
+}."\n}}";
+    die $@ if $@;
+    # ^ that was the part for syntax errors.
+    # now comes the part for runtime errors:
+    &$sub()
+};
 
 
 sub Die {
