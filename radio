@@ -95,7 +95,10 @@ our $mkplayer= sub {
 		  &$run ($player,$url)
 	      }
 	  },
-	  $maybe_bitrate
+	  $maybe_bitrate,
+	  # and in order to name it in error messages in ambiguity
+	  # detection:
+	  $key
 	 ]
 	)
     }
@@ -213,21 +216,31 @@ eval {
 
 	    # filter on values, thus reverse key/value pairs
 	    my $res= { $trie->lookup_data ($key) };
-	    if (keys %$res) {
-		my $val;
-		for my $k (keys %$res) {
-		    if ($val) {
-			if ($$res{$k} eq $val) {
-			    # ok
-			} else {
-			    Die "station key '$key' ambiguous";
-			}
-		    } else {
-			$val= $$res{$k}
+	    if (my @k= keys %$res) {
+		my @v= map { $$res{$_} } @k;
+
+		# check for ambiguities:
+		my %seen;
+		my @vuniq;
+		for (@v) {
+		    unless ($seen{$_}) {
+			push @vuniq, $_;
+			$seen{$_}=1
 		    }
 		}
-		my ($do,$maybe_bitrate)= @$val;
-		&$do
+
+		if (@vuniq == 1) {
+		    my ($do,$maybe_bitrate)= @{$vuniq[0]};
+		    &$do
+		} else {
+		    Die "station key '$key' resolves to multiple stations:\n".
+		      join("",
+			   sort
+			   map {
+			       my ($do, $maybe_bitrate, $key)= @$_;
+			       "  $key\n"
+			   } @vuniq);
+		}
 	    } else {
 		Die "station key '$key' not found";
 	    }
