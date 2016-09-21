@@ -1,3 +1,9 @@
+#http://uzic.ch/
+# 128k http://www.uzic.ch/tek.m3u
+(mp3 uzic=> "http://stream03.uzic.ch:9010/", 128), # or http://jabba.dasource.ch:9010/
+# 56k http://www.uzic.ch/tek24.m3u
+#(mp3 low_uzic=> "http://stream.uzic.ch:8080/tek-minimal24.mp3", 56), # doesn't work?
+
 # http://stream.srg-ssr.ch/drs1/mp3_128.m3u
 (mp3 drs1=> "http://streaming.swisstxt.ch/m/drs1/mp3_128", 128),
 # http://stream.srg-ssr.ch/drs2/mp3_128.m3u
