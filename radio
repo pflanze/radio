@@ -27,6 +27,7 @@ sub usage {
   Options:
   -l|--list  list known station keys
   -b|--bitrate  list known station keys including bitrate (where given)
+  -lb|--lb   *only* list stations having a bitrate
   --dry-run  only select station, don't open it
   -m|--mono  mix to a single channel (only works with mpg123 for now)
   --capture  capture stream instead of playing it (using @$capturecmd)
@@ -43,14 +44,21 @@ our ($opt_l,$opt_bitrate,$opt_dry);
 our $opt_mono;
 our $opt_capture;
 our $opt_ao;
+our $opt_lb;
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
 	   "list"=>\$opt_l,
+	   "l"=>\$opt_l,
 	   "bitrate"=>\$opt_bitrate,
 	   "dry-run"=> \$opt_dry,
 	   "mono"=> \$opt_mono,
 	   "capture"=> \$opt_capture,
 	   "ao=s"=> \$opt_ao,
+	   "lb"=> sub {
+	       $opt_l=1;
+	       $opt_bitrate=1;
+	       $opt_lb=1;
+	   },
 	   ) or exit 1;
 usage unless @ARGV==1 or $opt_l or $opt_bitrate;
 our ($rawkey)=@ARGV;
@@ -178,7 +186,11 @@ eval {
 	print map {
 	    my ($do, $maybe_bitrate)= @{$$mapping{$_}};
 	    my $br= $maybe_bitrate // "";
-	    "$br\t$_\n"
+	    if ($opt_lb and ! defined $maybe_bitrate) {
+		()
+	    } else {
+		"$br\t$_\n"
+	    }
 	} sort keys %$mapping
     } elsif ($opt_l) {
 	print map { "$_\n" } sort keys %$mapping
