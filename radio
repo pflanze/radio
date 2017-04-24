@@ -32,6 +32,7 @@ sub usage {
   -m|--mono  mix to a single channel (only works with mpg123 for now)
   --capture  capture stream instead of playing it (using @$capturecmd)
   -ao drvr   choose output driver (alsa|jack|pulseaudio ..)
+  --mplayer  choose mplayer over mpg123 etc.
 
   (Christian Jaeger <$email>)
 ";
@@ -44,6 +45,7 @@ our ($opt_l,$opt_bitrate,$opt_dry);
 our $opt_mono;
 our $opt_capture;
 our $opt_ao;
+our $opt_mplayer;
 our $opt_lb;
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
@@ -54,6 +56,7 @@ GetOptions("verbose"=> \$verbose,
 	   "mono"=> \$opt_mono,
 	   "capture"=> \$opt_capture,
 	   "ao=s"=> \$opt_ao,
+	   "mplayer"=> \$opt_mplayer,
 	   "lb"=> sub {
 	       $opt_l=1;
 	       $opt_bitrate=1;
@@ -127,14 +130,14 @@ sub mplayer; *mplayer= \&mms;
 sub aacplus; *aacplus= \&mplayer;
 
 *mp3=
-  ($opt_ao ? \&mplayer :
+  (($opt_ao or $opt_mplayer) ? \&mplayer :
    &$mkplayer (["mpg123",
 		"-b","1024", # nope actually every number is worse than not giving the flag. and ah: not network buffering, but audio buffer size. Maybe doesn't make 'sense' for OSS4 (sic).
 		($opt_mono ? "-m" : ()),
 	       ]));
 
 *ogg=
-  ($opt_ao ? \&mplayer :
+  (($opt_ao or $opt_mplayer) ? \&mplayer :
    &$mkplayer (["ogg123",
 		"-b","180",#
 		"-p","90",

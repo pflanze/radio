@@ -1,3 +1,5 @@
+(mp3 hardradio=> "http://144.217.29.205:80/", 128),
+
 #http://uzic.ch/
 # 128k http://www.uzic.ch/tek.m3u
 (mp3 uzic=> "http://stream03.uzic.ch:9010/", 128), # or http://jabba.dasource.ch:9010/
