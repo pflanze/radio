@@ -148,7 +148,7 @@
 
 # http://dnbradio.com/
 #(mp3 dnbradio=> "http://source.dnbradio.com:10128/dnbradio_darkstep.mp3"),
-(mp3 dnb1_dnbradio=> "http://crash.dnbradio.com:10128/dnbradio_main.mp3", 192),
+(mp3 dnb1_dnbradio=> "http://trace.dnbradio.com:80/dnbradio_main.mp3", 192),
 
 # ------------------------------------------------------------------
 # http://en.wikipedia.org/wiki/CKRK-FM
