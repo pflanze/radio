@@ -122,8 +122,11 @@ sub mms; sub mp3; sub ogg; # to avoid "used only once" warnings.
 		 "-quiet",
 		 ($opt_ao ? ("-ao",$opt_ao) : ()),
 		 "-cache","200",#lower it from /opt/chj/libexec/mplayer's default
+		 "-cache-min","40",
+		 # ^ make dependent on bitrate? 40 seems too much for
+		 #   z (yet maybe most needed there, so perhaps fine)
+		 
 		 #"-audio-preload","2"  is in mplayer manpage, but is for mencoder only.
-		 #hm finde nix
 		 "-noconsolecontrols", # necessary to be able to put it into background and not STOP itself; there's no good use for the controls for streaming audio anyway, right?
 		]);
 sub mplayer; *mplayer= \&mms;
