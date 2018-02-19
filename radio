@@ -28,6 +28,8 @@ sub usage {
   -l|--list  list known station keys
   -b|--bitrate  list known station keys including bitrate (where given)
   -lb|--lb   *only* list stations having a bitrate
+  --url      show URL in listings
+  -lu        show listing with URL
   --dry-run  only select station, don't open it
   -m|--mono  mix to a single channel (only works with mpg123 for now)
   --capture  capture stream instead of playing it (using @$capturecmd)
@@ -47,9 +49,11 @@ our $opt_capture;
 our $opt_ao;
 our $opt_mplayer;
 our $opt_lb;
+our $opt_url;
 GetOptions("verbose"=> \$verbose,
 	   "help"=> sub{usage},
 	   "list"=>\$opt_l,
+	   "u|url"=> \$opt_url,
 	   "l"=>\$opt_l,
 	   "bitrate"=>\$opt_bitrate,
 	   "dry-run"=> \$opt_dry,
@@ -61,6 +65,10 @@ GetOptions("verbose"=> \$verbose,
 	       $opt_l=1;
 	       $opt_bitrate=1;
 	       $opt_lb=1;
+	   },
+	   "lu"=> sub {
+	       $opt_l=1;
+	       $opt_url=1;
 	   },
 	   ) or exit 1;
 usage unless @ARGV==1 or $opt_l or $opt_bitrate;
@@ -188,18 +196,21 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
 }
 
 eval {
-    if ($opt_bitrate) {
+    if ($opt_l or $opt_bitrate) {
 	print map {
 	    my ($do, $maybe_bitrate)= @{$$mapping{$_}};
 	    my $br= $maybe_bitrate // "";
 	    if ($opt_lb and ! defined $maybe_bitrate) {
 		()
 	    } else {
-		"$br\t$_\n"
+		(($opt_bitrate ? "$br\t" : "")
+		 . $_
+		 . ($opt_url ? "\t$do" : "")
+		 . "\n")
 	    }
 	} sort keys %$mapping
     } elsif ($opt_l) {
-	print map { "$_\n" } sort keys %$mapping
+	print map { $opt_url ? "$_ $$mapping{$_}[0]\n" : "$_\n" } sort keys %$mapping
     } else {
 	{
 	    # first try to add the parts split on _, then split on number boundaries;
@@ -274,3 +285,4 @@ eval {
 	die $e
     }
 }
+
