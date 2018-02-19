@@ -117,7 +117,9 @@ our $mkplayer= sub {
 	  $maybe_bitrate,
 	  # and in order to name it in error messages in ambiguity
 	  # detection:
-	  $key
+	  $key,
+	  # and to allow for --url option:
+	  $url
 	 ]
 	)
     }
@@ -198,14 +200,14 @@ sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs 
 eval {
     if ($opt_l or $opt_bitrate) {
 	print map {
-	    my ($do, $maybe_bitrate)= @{$$mapping{$_}};
+	    my ($do, $maybe_bitrate, $key, $url)= @{$$mapping{$_}};
 	    my $br= $maybe_bitrate // "";
 	    if ($opt_lb and ! defined $maybe_bitrate) {
 		()
 	    } else {
 		(($opt_bitrate ? "$br\t" : "")
 		 . $_
-		 . ($opt_url ? "\t$do" : "")
+		 . ($opt_url ? "\t$url" : "")
 		 . "\n")
 	    }
 	} sort keys %$mapping
