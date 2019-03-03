@@ -74,7 +74,7 @@ GetOptions("verbose"=> \$verbose,
 usage unless @ARGV==1 or $opt_l or $opt_bitrate;
 our ($rawkey)=@ARGV;
 
-#use Chj::xperlfunc 'xexec';
+# copy from Chj::xperlfunc
 sub xexec {
     #local $^W;
     no warnings;
@@ -88,9 +88,8 @@ our $run=sub {
     xexec (@$cmd,@args)
 };
 
-#use lib "/home/chrisperl/functional-perl/lib";
-#use Chj::Trapl;
-use Chj::Backtrace;
+#use lib "/opt/functional-perl/lib"; use Chj::Trapl;
+#use Chj::Backtrace;
 
 our $mkplayer= sub {
     my ($player,$maybe_playername)=@_;
@@ -125,19 +124,21 @@ our $mkplayer= sub {
     }
 };
 
-sub mms; sub mp3; sub ogg; # to avoid "used only once" warnings.
+# to avoid "used only once" warnings:
+sub mms; sub mp3; sub ogg;
 
 *mms=
     &$mkplayer (["mplayer",
 		 "-quiet",
 		 ($opt_ao ? ("-ao",$opt_ao) : ()),
-		 "-cache","200",#lower it from /opt/chj/libexec/mplayer's default
-		 "-cache-min","40",
+		 "-cache", "200",
+		 "-cache-min", "40",
 		 # ^ make dependent on bitrate? 40 seems too much for
 		 #   z (yet maybe most needed there, so perhaps fine)
-		 
-		 #"-audio-preload","2"  is in mplayer manpage, but is for mencoder only.
-		 "-noconsolecontrols", # necessary to be able to put it into background and not STOP itself; there's no good use for the controls for streaming audio anyway, right?
+		 "-noconsolecontrols",
+		 # ^ necessary to be able to put it into background
+		 #   and not STOP itself; there's no good use for the
+		 #   controls for streaming audio anyway, right?
 		]);
 sub mplayer; *mplayer= \&mms;
 sub aacplus; *aacplus= \&mplayer;
@@ -145,7 +146,9 @@ sub aacplus; *aacplus= \&mplayer;
 *mp3=
   (($opt_ao or $opt_mplayer) ? \&mplayer :
    &$mkplayer (["mpg123",
-		"-b","1024", # nope actually every number is worse than not giving the flag. and ah: not network buffering, but audio buffer size. Maybe doesn't make 'sense' for OSS4 (sic).
+		"-b", "1024",
+		# ^ audio buffer size, not network buffering. Maybe
+		#   doesn't make 'sense'/work well for OSS4.
 		($opt_mono ? "-m" : ()),
 	       ]));
 
@@ -155,20 +158,25 @@ sub aacplus; *aacplus= \&mplayer;
 		"-b","180",#
 		"-p","90",
 		"--audio-buffer","1000",#
-		#^ well shouldn't it be 10 times bigger than the input...
-		"-q", # avoid using much CPU for screen updating (in rlwrap/urxvt/Xorg)
+		# ^ well shouldn't it be 10 times larger than the
+		#   input...
+		"-q",
+		# ^ avoid using much CPU for screen updating (in
+		#   rlwrap/urxvt/Xorg)
 	       ]));
 
-# wrap stationsfile with +{ }; and load it in a way that allows Trapl
-# access to the context, sigh.
+
+# Wrap stationsfile with +{ }; and load it in a way that allows Trapl
+# access to the context.
 our $mapping= do {
     my $sub= eval qq[#line 1 "$stationsfile"\n sub{+{].do {
-    open my $in, "<",$stationsfile;
-    local $/;
-    my $cnt= <$in>;
-    close $in or die;
-    $cnt
-}."\n}}";
+	open my $in, "<",$stationsfile;
+	local $/;
+	my $cnt= <$in>;
+	close $in or die;
+	$cnt
+    }."
+}}";
     die $@ if $@;
     # ^ that was the part for syntax errors.
     # now comes the part for runtime errors:
@@ -180,8 +188,10 @@ sub Die {
     die bless [ join("", "$myname: ", @_, "\n") ], "Die"
 }
 
-sub filter_singles ( $ ) { # array of pairs -> hash containing only those pairs which appear once
-    # [ [ "a", 1 ], [ "a", 2 ], [ "b", 3 ] ] -> { "b" => 3 }
+
+# array of pairs -> hash containing only those pairs which appear once
+# [ [ "a", 1 ], [ "a", 2 ], [ "b", 3 ] ] -> { "b" => 3 }
+sub filter_singles ( $ ) {
     my ($lis)=@_;
     my $seen= {};
     my $out= {};
@@ -212,10 +222,13 @@ eval {
 	    }
 	} sort keys %$mapping
     } elsif ($opt_l) {
-	print map { $opt_url ? "$_ $$mapping{$_}[0]\n" : "$_\n" } sort keys %$mapping
+	print map {
+	    $opt_url ? "$_ $$mapping{$_}[0]\n" : "$_\n"
+	} sort keys %$mapping
     } else {
 	{
-	    # first try to add the parts split on _, then split on number boundaries;
+	    # first try to add the parts split on _, then split on
+	    # number boundaries
 	    local our $add_keys_singles= sub {
 		local our $filtered= filter_singles \@_;
 		for my $part (keys %$filtered) {
