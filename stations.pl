@@ -88,7 +88,7 @@
  #(mp3 dnb4_partyvibe=> "http://107.182.233.214:8004/stream"),
  
  # Different Drumz DnB Radio (http://37.187.79.93:8031/listen.pls?sid=1 pls)
- (mp3 dnb5_danceradiouk=> "http://37.187.79.93:8031/stream", 192),
+ (mp3 dnb5_DifferentDrumz=> "http://37.187.79.93:8031/stream", 192),
  
  # -------------------------------------------------------
  # http://www.slayradio.org/home.php
