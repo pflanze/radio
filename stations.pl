@@ -74,12 +74,21 @@
 (mp3 di_techno=> "http://88.191.102.29:7204"),
 (mp3 di_trance=> "http://scfire-dtc-aa01.stream.aol.com:80/stream/1003"),
 
+# -------------------------------------------------------
 # http://www.internet-radio.com/stations/drum%20and%20bass/
-(mp3 dnb3_danceradiouk=> "http://uk2.internet-radio.com:30252/", 128),
-#  partyvibe: http://www.partyviberadio.com:8004/listen.pls?sid=1 returns playlist:
-#(mp3 dnb4_partyvibe=> "http://107.182.233.214:8004/stream"),
-(mp3 dnb2_the_eye_of_destiny=> "http://uk3.internet-radio.com:8039/", 128),
 
+    # Bassdrive - Worldwide Drum and Bass Radio 
+    (aacplus dnb2_bassdrive=> "http://50.7.70.58:8200/", 32), # krist 32
+    
+    (aacplus dnb3_danceradiouk=> "http://uk2.internet-radio.com:8024/", 48),
+    
+    #  partyvibe: http://www.partyviberadio.com:8004/listen.pls?sid=1 returns playlist:
+    #(mp3 dnb4_partyvibe=> "http://107.182.233.214:8004/stream"),
+    
+    # Different Drumz DnB Radio (http://37.187.79.93:8031/listen.pls?sid=1 pls)
+    (mp3 dnb5_danceradiouk=> "http://37.187.79.93:8031/stream", 192),
+
+# -------------------------------------------------------
 # http://www.slayradio.org/home.php
 # http://www.slayradio.org/tune_in.php/128kbps/listen.m3u
 (mp3 slayradio=> "http://relay1.slayradio.org:8000/", 128),
