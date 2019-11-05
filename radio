@@ -2,9 +2,10 @@
 
 mydir=$(dirname "$(readlink -f "$0")")
 _radio=$mydir/_radio
+xx=$mydir/libexec/»»
 
 if "$_radio" --action-given "$@"; then
     exec "$_radio" "$@"
 else
-    rlwrap --command-name radio »» "$_radio" "$@"
+    rlwrap --command-name radio "$xx" "$_radio" "$@"
 fi

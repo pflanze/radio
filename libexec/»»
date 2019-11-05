@@ -1,0 +1,3 @@
+#!/bin/bash
+
+while IFS='' read -r item; do "$@" "$item"; done
