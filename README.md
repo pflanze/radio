@@ -1,12 +1,7 @@
+# Most minimalistic internet radio player
+
 This is a simple streaming radio player with the stations I'm
 listening to.
-
-I originally wrote it when I moved to Montreal so that I could easily
-listen to local radio stations from my computers running Debian. I'm
-now finding that I rarely listen to those stations and instead to the
-handful of stations I always preferred, but I find that I actually
-like this script better than what music players I have configured
-previously.
 
 It uses a simple text (actually perl code) based station configuration
 file, with configuration triples specifying the type of stream, the
@@ -17,7 +12,7 @@ script simply calls the right player for the stream data type
 (mplayer, ogg123, mpg123). It allows to shorten the name of the radio
 station as long as it isn't ambiguous.
 
-Run `radio --help` for more help.
+Run `radio --help` for help on the arguments.
 
 Run it without a radio station and it will go into an interactive mode
 where it takes radio station names or some of the options (like `-l`)
