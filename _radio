@@ -37,8 +37,8 @@ sub usage {
   -ao drvr   choose output driver (alsa|jack|pulseaudio ..)
   --mplayer  choose mplayer over mpg123 etc.
 
-  --action-given  do not play anything, exit 0 if radioname or another
-                  kind of action was given, 1 otherwise.
+  --action-given  do not play anything, print 'true' if radioname or
+                  another kind of action was given, 'false' otherwise.
 
   (Christian Jaeger <$email>)
 ";
@@ -80,8 +80,9 @@ GetOptions("verbose"=> \$verbose,
 	   ) or exit 1;
 
 if ($opt_action_given) {
-    exit ((@ARGV or $opt_help or $opt_l or $opt_url or $opt_bitrate)
-	  ? 0 : 1)
+    print((@ARGV or $opt_help or $opt_l or $opt_url or $opt_bitrate)
+	  ? "true\n" : "false\n");
+    exit 0;
 }
 
 usage if $opt_help;
