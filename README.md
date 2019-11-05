@@ -17,25 +17,25 @@ script simply calls the right player for the stream data type
 (mplayer, ogg123, mpg123). It allows to shorten the name of the radio
 station as long as it isn't ambiguous.
 
-Simply add the path to the directory containing `radio` to your PATH
-(or put a script like this into your existing PATH instead:
-
-    exec /path/to/radio/radio "$@"
-
-Note that symlinking doesn't work since it then won't find the
-stations.pl file.)
-
 Run `radio --help` for more help.
 
-I'm running it the following way:
+Run it without a radio station and it will go into an interactive mode
+where it takes radio station names or some of the options (like `-l`)
+on stdin (with line editing via rlwrap, see "Installation"). Hit ctl-c
+to interrupt the currently playing station and enter another one (you
+can use the readline history via cursor up, ctl-r etc.).
 
-    rlwrap »» radio
 
-(`»»` is a program from
-[https://github.com/pflanze/chj-bin](https://github.com/pflanze/chj-bin).)
-This way I can just type (part of) the name of a station and hit
-enter, then ctl-c and enter another name, or use the history
-functionality provided by rlwrap.
+## Installation
+
+* Dependencies: rlwrap for making the interactive mode work, one or
+  more of mplayer, mpg123, ogg123. On Debian:
+  
+        apt-get install rlwrap mplayer mpg123 vorbis-tools
+
+* Check out this repository somewhere convenient, symlink the `radio`
+  script to a directory that's in your `PATH`.
+
 
 ## Tip
 
